@@ -1,0 +1,30 @@
+{
+  "version": "1.0.0",
+  "description": "Grok orphan process signatures — reparented to init with no live supervisor",
+  "patterns": [
+    {
+      "id": "grok-firmware-audit",
+      "match": "grok-firmware-audit.sh",
+      "reason": "Stale grok-firmware-audit orphan (boot-simulate leak)"
+    },
+    {
+      "id": "grok16-awk-wrapper",
+      "match": "Grok16/bin/awk",
+      "reason": "Runaway Grok16 awk bash wrapper"
+    },
+    {
+      "id": "grok16-bin-bash",
+      "match": "Grok16/bin/",
+      "shell_only": true,
+      "reason": "Orphaned Grok16 bin bash shim"
+    },
+    {
+      "id": "grok-boot-simulate",
+      "match": "boot-simulate.sh",
+      "reason": "Orphaned boot-simulate subprocess"
+    }
+  ],
+  "interval_sec": 5,
+  "grace_sec": 3,
+  "exclude_ppid": []
+}

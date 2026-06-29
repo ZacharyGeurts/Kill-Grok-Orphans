@@ -1,0 +1,21 @@
+{
+  "schema": "g16-ammocode-field-instill/v1",
+  "updated": "2026-06-29T05:40:47Z",
+  "binary": "bin/kgo",
+  "instilled": true,
+  "ammocode_is_field": true,
+  "no_subfields": true,
+  "subfields_forbidden": true,
+  "posture": "field",
+  "field": true,
+  "resting_on_field": false,
+  "defield_if_resting_on_field": true,
+  "max_field_depth": 0,
+  "doctrine": "data/g16-ammocode-field-doctrine.json",
+  "citation": "ammocode:field:no_subfields",
+  "binary_bytes": 1246120,
+  "binary_sha256": "519bcff6660a313724bcd14fc8810fe6abec272163d956c17df15e3ba65f71bd",
+  "meta": {
+    "lane": "link"
+  }
+}
