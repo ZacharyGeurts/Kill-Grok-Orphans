@@ -22,12 +22,13 @@ static void on_signal(int sig)
 static void usage(const char *prog)
 {
     fprintf(stderr,
-            "Kill Grok Orphans v%s — orphan grok process watchdog\n\n"
+            "Kill Grok Orphans v%s — fast orphan grok process watchdog\n\n"
             "Usage: %s [options]\n"
             "  -c, --config PATH   patterns JSON (default: /etc/kgo/kgo-patterns.json)\n"
             "  -f, --foreground    run in foreground (no daemonize)\n"
             "  -n, --dry-run       scan only, do not kill\n"
             "  -o, --once          single scan then exit\n"
+            "  -s, --stats         print scan stats (with --once or --dry-run)\n"
             "  -h, --help          show help\n",
             KGO_VERSION, prog);
 }
@@ -69,11 +70,14 @@ static int daemonize(void)
     return 0;
 }
 
-static int run_scan(const kgo_config_t *cfg, int grace_sec, bool dry_run)
+static int run_scan(const kgo_config_t *cfg, int grace_sec, bool dry_run, bool show_stats)
 {
     kgo_target_t targets[256];
     size_t found = 0;
-    if (kgo_scan_orphans(cfg, targets, 256, &found) != 0)
+    kgo_scan_stats_t stats;
+    memset(&stats, 0, sizeof(stats));
+
+    if (kgo_scan_orphans(cfg, targets, 256, &found, &stats) != 0)
         return -1;
 
     int killed = 0;
@@ -84,9 +88,17 @@ static int run_scan(const kgo_config_t *cfg, int grace_sec, bool dry_run)
                    targets[i].reason, targets[i].cmdline);
             continue;
         }
-        if (kgo_kill_target(&targets[i], grace_sec) == 0)
+        if (kgo_kill_target(&targets[i], grace_sec) == 0) {
             killed++;
+            stats.killed++;
+        }
     }
+
+    if (show_stats) {
+        printf("stats scanned=%u orphan_checked=%u matched=%u killed=%u\n",
+               stats.scanned, stats.orphan_checked, stats.matched, stats.killed);
+    }
+
     return (int)found;
 }
 
@@ -96,23 +108,26 @@ int main(int argc, char **argv)
     bool foreground = false;
     bool dry_run = false;
     bool once = false;
+    bool show_stats = false;
 
     static struct option long_opts[] = {
         {"config", required_argument, 0, 'c'},
         {"foreground", no_argument, 0, 'f'},
         {"dry-run", no_argument, 0, 'n'},
         {"once", no_argument, 0, 'o'},
+        {"stats", no_argument, 0, 's'},
         {"help", no_argument, 0, 'h'},
         {0, 0, 0, 0}
     };
 
     int ch;
-    while ((ch = getopt_long(argc, argv, "c:fnoh", long_opts, NULL)) != -1) {
+    while ((ch = getopt_long(argc, argv, "c:fnosh", long_opts, NULL)) != -1) {
         switch (ch) {
         case 'c': config_opt = optarg; break;
         case 'f': foreground = true; break;
         case 'n': dry_run = true; break;
         case 'o': once = true; break;
+        case 's': show_stats = true; break;
         case 'h': usage(argv[0]); return 0;
         default: usage(argv[0]); return 1;
         }
@@ -137,14 +152,16 @@ int main(int argc, char **argv)
     if (!dry_run || !foreground)
         openlog("kgo", LOG_PID | LOG_CONS, LOG_DAEMON);
 
-    kgo_log(LOG_INFO, "Kill Grok Orphans v%s started (patterns=%zu interval=%ds)",
-            KGO_VERSION, cfg.pattern_count, cfg.interval_sec);
+    kgo_log(LOG_INFO,
+            "Kill Grok Orphans v%s started (patterns=%zu interval=%ds grace=%ds min_age=%ds)",
+            KGO_VERSION, cfg.pattern_count, cfg.interval_sec, cfg.grace_sec,
+            cfg.min_age_sec);
 
     signal(SIGTERM, on_signal);
     signal(SIGINT, on_signal);
 
     do {
-        int n = run_scan(&cfg, cfg.grace_sec, dry_run);
+        int n = run_scan(&cfg, cfg.grace_sec, dry_run, show_stats && (once || dry_run));
         if (n < 0) {
             kgo_log(LOG_ERR, "scan failed");
             if (once)

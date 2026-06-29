@@ -5,7 +5,7 @@
 
 **Always-on watchdog that kills reparented Grok orphan processes** — the runaway `grok-firmware-audit.sh` and `Grok16/bin/awk` bash wrappers that leak from boot-simulate and pile up at 30% CPU each.
 
-Built with [Grok16](https://github.com/ZacharyGeurts/Grok16) (`g16`) on Linux. Python watchdog ships for macOS and Windows.
+Built with [Grok16](https://github.com/ZacharyGeurts/Grok16) (`g16`) on Linux — **1.1.0** fast scan, 12 leak signatures, multi-platform release. Python watchdog ships for macOS and Windows.
 
 ## What it kills
 
@@ -15,6 +15,9 @@ Built with [Grok16](https://github.com/ZacharyGeurts/Grok16) (`g16`) on Linux. P
 | `Grok16/bin/awk` | Runaway awk bash shim children |
 | `Grok16/bin/` + shell | Orphaned Grok16 bin wrappers |
 | `boot-simulate.sh` | Orphaned boot-simulate subprocess |
+| `dump_bash_state` | Orphaned Grok agent shell |
+| `.grok/sessions` | Orphaned Grok CLI session bash |
+| `ammoos-release.sh` / `pack-ammoos-release.sh` | Stuck AmmoOS publish orphans |
 
 An orphan is a process whose parent is **init** (Linux/macOS ppid=1) or **System** (Windows ppid=0/4) — reparented with no live supervisor.
 
@@ -23,7 +26,7 @@ An orphan is a process whose parent is **init** (Linux/macOS ppid=1) or **System
 ### Linux (systemd, requires root)
 
 ```bash
-curl -fsSL https://github.com/ZacharyGeurts/Kill-Grok-Orphans/releases/latest/download/kgo-1.0.0-linux-x86_64.tar.gz | tar -xz
+curl -fsSL https://github.com/ZacharyGeurts/Kill-Grok-Orphans/releases/latest/download/kgo-1.1.0-linux-gnu-x86_64.tar.gz | tar -xz
 cd Kill-Grok-Orphans  # or extracted folder
 sudo packaging/linux/install.sh
 ```
@@ -69,7 +72,7 @@ make
 sudo make install
 ```
 
-Compiler: `g16 -std=gnu17 -O2` (Grok16 16.2.0).
+Compiler: `g16 -std=gnu17 -O3` (Grok16 5.0.0). All platforms: `./scripts/build-all-platforms.sh`
 
 ## Configuration
 

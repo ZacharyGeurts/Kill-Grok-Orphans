@@ -8,21 +8,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <fcntl.h>
 #include <sys/types.h>
 #include <unistd.h>
 #include <stdarg.h>
 #include <syslog.h>
 
-static int read_cmdline(pid_t pid, char *buf, size_t buflen)
+static pid_t g_self_pid;
+
+static int read_cmdline_fast(pid_t pid, char *buf, size_t buflen)
 {
     char path[64];
     snprintf(path, sizeof(path), "/proc/%d/cmdline", (int)pid);
-    FILE *f = fopen(path, "r");
-    if (!f)
+    int fd = open(path, O_RDONLY | O_CLOEXEC);
+    if (fd < 0)
         return -1;
-    size_t n = fread(buf, 1, buflen - 1, f);
-    fclose(f);
-    for (size_t i = 0; i < n; i++)
+    ssize_t n = read(fd, buf, buflen - 1);
+    close(fd);
+    if (n <= 0)
+        return -1;
+    for (ssize_t i = 0; i < n; i++)
         if (buf[i] == '\0')
             buf[i] = ' ';
     buf[n] = '\0';
@@ -31,19 +36,19 @@ static int read_cmdline(pid_t pid, char *buf, size_t buflen)
     return (int)n;
 }
 
-static int read_ppid(pid_t pid, pid_t *ppid_out)
+static int read_ppid_fast(pid_t pid, pid_t *ppid_out)
 {
     char path[64];
-    char line[512];
+    char line[384];
     snprintf(path, sizeof(path), "/proc/%d/stat", (int)pid);
-    FILE *f = fopen(path, "r");
-    if (!f)
+    int fd = open(path, O_RDONLY | O_CLOEXEC);
+    if (fd < 0)
         return -1;
-    if (!fgets(line, sizeof(line), f)) {
-        fclose(f);
+    ssize_t n = read(fd, line, sizeof(line) - 1);
+    close(fd);
+    if (n <= 0)
         return -1;
-    }
-    fclose(f);
+    line[n] = '\0';
     char *rp = strrchr(line, ')');
     if (!rp)
         return -1;
@@ -53,6 +58,51 @@ static int read_ppid(pid_t pid, pid_t *ppid_out)
         return -1;
     *ppid_out = (pid_t)ppid;
     return 0;
+}
+
+static int read_age_sec(pid_t pid)
+{
+    char path[64];
+    char line[512];
+    snprintf(path, sizeof(path), "/proc/%d/stat", (int)pid);
+    int fd = open(path, O_RDONLY | O_CLOEXEC);
+    if (fd < 0)
+        return -1;
+    ssize_t n = read(fd, line, sizeof(line) - 1);
+    close(fd);
+    if (n <= 0)
+        return -1;
+    line[n] = '\0';
+    char *rp = strrchr(line, ')');
+    if (!rp)
+        return -1;
+    char *p = rp + 2;
+    unsigned long fields[20];
+    int count = 0;
+    while (count < 20 && *p) {
+        while (*p == ' ')
+            p++;
+        if (!*p)
+            break;
+        fields[count++] = strtoul(p, &p, 10);
+    }
+    if (count < 20)
+        return -1;
+    unsigned long starttime = fields[19];
+    unsigned long clk_tck = (unsigned long)sysconf(_SC_CLK_TCK);
+    if (clk_tck == 0)
+        return -1;
+    FILE *f = fopen("/proc/uptime", "r");
+    if (!f)
+        return -1;
+    double up = 0.0;
+    if (fscanf(f, "%lf", &up) != 1) {
+        fclose(f);
+        return -1;
+    }
+    fclose(f);
+    long age = (long)(unsigned long)up - (long)(starttime / clk_tck);
+    return age < 0 ? 0 : (int)age;
 }
 
 bool kgo_is_orphan_ppid(pid_t ppid)
@@ -76,7 +126,9 @@ bool kgo_match_target(const kgo_config_t *cfg, pid_t pid, pid_t ppid,
         return false;
     if (pid <= 1)
         return false;
-    if (getpid() == pid)
+    if (g_self_pid == 0)
+        g_self_pid = getpid();
+    if (g_self_pid == pid)
         return false;
 
     for (size_t i = 0; i < cfg->pattern_count; i++) {
@@ -96,33 +148,55 @@ bool kgo_match_target(const kgo_config_t *cfg, pid_t pid, pid_t ppid,
 }
 
 int kgo_scan_orphans(const kgo_config_t *cfg, kgo_target_t *out,
-                     size_t max_out, size_t *found)
+                     size_t max_out, size_t *found, kgo_scan_stats_t *stats)
 {
     DIR *d = opendir("/proc");
     if (!d)
         return -1;
 
+    if (g_self_pid == 0)
+        g_self_pid = getpid();
+
     size_t n = 0;
     struct dirent *ent;
+    char cmdbuf[KGO_CMDLINE_SCAN];
+
     while ((ent = readdir(d)) != NULL && n < max_out) {
-        if (!isdigit((unsigned char)ent->d_name[0]))
+        if (ent->d_type != DT_UNKNOWN && ent->d_type != DT_DIR)
             continue;
-        pid_t pid = (pid_t)atoi(ent->d_name);
-        if (pid <= 1)
+        const char *name = ent->d_name;
+        if (!isdigit((unsigned char)name[0]))
+            continue;
+        if (stats)
+            stats->scanned++;
+
+        pid_t pid = (pid_t)atoi(name);
+        if (pid <= 1 || pid == g_self_pid)
             continue;
 
         pid_t ppid = 0;
-        if (read_ppid(pid, &ppid) != 0)
+        if (read_ppid_fast(pid, &ppid) != 0)
             continue;
+        if (!kgo_is_orphan_ppid(ppid))
+            continue;
+        if (stats)
+            stats->orphan_checked++;
 
-        char cmdline[KGO_CMDLINE_LEN];
-        if (read_cmdline(pid, cmdline, sizeof(cmdline)) <= 0)
+        if (cfg->min_age_sec > 0) {
+            int age = read_age_sec(pid);
+            if (age >= 0 && age < cfg->min_age_sec)
+                continue;
+        }
+
+        if (read_cmdline_fast(pid, cmdbuf, sizeof(cmdbuf)) <= 0)
             continue;
 
         kgo_target_t t;
-        if (!kgo_match_target(cfg, pid, ppid, cmdline, &t))
+        if (!kgo_match_target(cfg, pid, ppid, cmdbuf, &t))
             continue;
 
+        if (stats)
+            stats->matched++;
         out[n++] = t;
     }
     closedir(d);
@@ -141,10 +215,10 @@ int kgo_kill_target(const kgo_target_t *target, int grace_sec)
     if (kill(target->pid, SIGTERM) != 0)
         return -1;
 
-    for (int i = 0; i < grace_sec * 10; i++) {
+    for (int i = 0; i < grace_sec * 20; i++) {
         if (kill(target->pid, 0) != 0)
             return 0;
-        usleep(100000);
+        usleep(50000);
     }
 
     if (kill(target->pid, SIGKILL) == 0)

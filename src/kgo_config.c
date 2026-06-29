@@ -85,8 +85,9 @@ static bool json_bool_in_obj(const char *obj, const char *key)
 int kgo_load_config(const char *path, kgo_config_t *cfg)
 {
     memset(cfg, 0, sizeof(*cfg));
-    cfg->interval_sec = 5;
-    cfg->grace_sec = 3;
+    cfg->interval_sec = 3;
+    cfg->grace_sec = 2;
+    cfg->min_age_sec = 1;
 
     size_t len = 0;
     char *json = read_file(path, &len);
@@ -95,6 +96,7 @@ int kgo_load_config(const char *path, kgo_config_t *cfg)
 
     cfg->interval_sec = json_int(json, "interval_sec", cfg->interval_sec);
     cfg->grace_sec = json_int(json, "grace_sec", cfg->grace_sec);
+    cfg->min_age_sec = json_int(json, "min_age_sec", cfg->min_age_sec);
 
     const char *arr = strstr(json, "\"patterns\"");
     if (!arr) {
@@ -131,6 +133,8 @@ int kgo_load_config(const char *path, kgo_config_t *cfg)
         }
         json_str(block, "reason", p->reason, sizeof(p->reason));
         p->shell_only = json_bool_in_obj(block, "shell_only");
+        if (p->shell_only)
+            cfg->require_shell_any = true;
         cfg->pattern_count++;
         obj = obj_end + 1;
     }

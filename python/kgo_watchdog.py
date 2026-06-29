@@ -23,7 +23,7 @@ except ImportError:
     psutil = None  # type: ignore
 
 LOG = logging.getLogger("kgo")
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 
 DEFAULT_CONFIG = Path("/etc/kgo/kgo-patterns.json")
 LOCAL_CONFIG = Path(__file__).resolve().parent.parent / "data" / "kgo-patterns.json"
