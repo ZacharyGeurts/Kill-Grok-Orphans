@@ -77,8 +77,9 @@ Compiler: `g16 -std=gnu17 -O2` (Grok16 16.2.0).
 
 ## Docs
 
-- [Wiki](https://github.com/ZacharyGeurts/Kill-Grok-Orphans/wiki)
-- [GitHub Pages](https://zacharygeurts.github.io/Kill-Grok-Orphans/)
+- [Wiki (GitHub Pages)](https://zacharygeurts.github.io/Kill-Grok-Orphans/wiki/)
+- [Wiki source](https://github.com/ZacharyGeurts/Kill-Grok-Orphans/tree/main/wiki)
+- [Site](https://zacharygeurts.github.io/Kill-Grok-Orphans/)
 
 ## License
 
