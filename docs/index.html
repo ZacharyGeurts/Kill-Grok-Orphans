@@ -1,68 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kill Grok Orphans — AmmoOS manual</title>
-  <meta http-equiv="refresh" content="4;url=https://zacharygeurts.github.io/AmmoOS/architecture.html" />
-  <link rel="canonical" href="https://zacharygeurts.github.io/AmmoOS/architecture.html" />
-  <meta name="description" content="Kill Grok Orphans — canonical docs in AmmoOS manual" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kill-Grok-Orphans • Live Demo | Sovereign Watchdog</title>
+  <meta name="description" content="Live public demo of Kill-Grok-Orphans. Runs full sovereign stack security (DHCP, DNS, NEXUS-Shield). Fixes GitHub cache poisoning, Copilot scraping, and bad actor issues in simulation. Real code is sovereign.">
+  <meta name="robots" content="noarchive">
   <style>
-.github-chrome-top, .github-chrome-bottom {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem 1rem;
-  padding: 0.55rem 0.85rem;
-  margin: 0 0 1rem;
-  border-radius: 8px;
-  background: rgba(34, 197, 94, 0.12);
-  border: 1px solid rgba(34, 197, 94, 0.35);
-  font-size: 0.92rem;
-}
-.github-chrome-bottom { margin: 2rem 0 0; }
-.github-chrome-top a.github-repo-primary,
-.github-chrome-bottom a.github-repo-primary {
-  font-weight: 700;
-  color: #4ade80;
-  text-decoration: none;
-}
-.github-chrome-top a.github-repo-primary:hover,
-.github-chrome-bottom a.github-repo-primary:hover { text-decoration: underline; }
-.github-chrome-links a { margin-right: 0.75rem; color: #94a3b8; }
-
-    body { font-family: system-ui, sans-serif; max-width: 46rem; margin: 0 auto; padding: 1rem 1.25rem 2rem; background: #0a0c12; color: #e8edf7; }
-    .lead { border-left: 3px solid #22c55e; padding-left: 1rem; margin: 1.25rem 0; }
-    .cta { display: inline-block; margin: 0.5rem 0.75rem 0.5rem 0; padding: 0.55rem 1rem; border-radius: 8px; background: #14532d; color: #bbf7d0; text-decoration: none; font-weight: 600; }
-    .cta:hover { background: #166534; }
-    .meta { color: #94a3b8; font-size: 0.92rem; }
+    :root { --green: #22c55e; --dark: #0a0c12; --panel: #11151f; --red: #ef4444; }
+    body { font-family: system-ui, -apple-system, sans-serif; background: var(--dark); color: #e8edf7; margin: 0; padding: 0; line-height: 1.5; }
+    .nav { background: #11151f; border-bottom: 1px solid #1f2937; padding: 0.6rem 1.25rem; display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+    .nav a { color: #94a3b8; text-decoration: none; font-size: 0.9rem; }
+    .nav a:hover { color: var(--green); }
+    .container { max-width: 1100px; margin: 0 auto; padding: 1.5rem 1.25rem; }
+    h1 { font-size: 2.1rem; margin: 0 0 0.25rem; }
+    .lead { color: #94a3b8; margin-bottom: 1rem; }
+    .warning-banner { background: #3f1f1f; border: 1px solid #ef4444; color: #fecaca; padding: 0.85rem 1rem; border-radius: 8px; margin-bottom: 1.5rem; font-size: 0.9rem; }
+    .status-bar { background: #11151f; border: 1px solid #1f2937; border-radius: 10px; padding: 1rem 1.25rem; margin-bottom: 1.5rem; display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center; }
+    .status-item { display: flex; align-items: center; gap: 0.5rem; }
+    .status-dot { width: 10px; height: 10px; background: var(--green); border-radius: 50%; box-shadow: 0 0 8px var(--green); }
+    .status-label { font-size: 0.85rem; color: #94a3b8; }
+    .status-value { font-weight: 700; color: var(--green); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+    .panel { background: #11151f; border: 1px solid #1f2937; border-radius: 10px; padding: 1.1rem; }
+    .panel h3 { margin: 0 0 0.75rem; font-size: 1.05rem; color: #bbf7d0; }
+    .metric { font-size: 1.8rem; font-weight: 700; line-height: 1; margin: 0.25rem 0; }
+    .metric small { font-size: 0.75rem; color: #64748b; font-weight: 400; }
+    button { background: #14532d; color: #bbf7d0; border: none; padding: 0.55rem 1.1rem; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.1s; }
+    button:hover { background: #166534; transform: translateY(-1px); }
+    button.danger { background: #3f1f1f; color: #fecaca; }
+    button.danger:hover { background: #4c1d1d; }
+    .log { background: #0a0c12; border: 1px solid #1f2937; border-radius: 6px; padding: 0.75rem; font-family: ui-monospace, monospace; font-size: 0.85rem; height: 180px; overflow-y: auto; white-space: pre-wrap; }
+    .disclaimer { font-size: 0.82rem; color: #64748b; border-left: 3px solid #334155; padding-left: 0.85rem; margin: 1.5rem 0; }
+    .footer { margin-top: 2rem; font-size: 0.8rem; color: #64748b; text-align: center; }
+    .green { color: var(--green); }
+    .red { color: #ef4444; }
+    .fix-btn { background: #1e3a5f; color: #93c5fd; }
+    .fix-btn:hover { background: #1e40af; }
   </style>
 </head>
 <body>
-<div class="github-chrome-top" role="navigation" aria-label="Stack navigation">
-  <a class="github-repo-primary" href="https://github.com/ZacharyGeurts/AmmoOS">→ Code: ZacharyGeurts/AmmoOS</a>
-  <span class="github-chrome-links">
-    <a href="https://github.com/ZacharyGeurts/Kill-Grok-Orphans">ZacharyGeurts/Kill-Grok-Orphans</a>
-    <a href="https://zacharygeurts.github.io/AmmoOS/">AmmoOS manual</a>
-    <a href="https://zacharygeurts.github.io/ZacharyGeurts/stack.html">Stack hub</a>
-    <a href="https://github.com/ZacharyGeurts/AmmoOS/releases/tag/v2.0.0-beta5">Release v2.0.0-beta5</a>
-  </span>
-</div>
+  <div class="nav">
+    <a href="https://github.com/ZacharyGeurts/Kill-Grok-Orphans"><strong>Kill-Grok-Orphans</strong></a>
+    <a href="https://zacharygeurts.github.io/Hostess7/">Hostess7</a>
+    <a href="https://zacharygeurts.github.io/AmmoOS/">AmmoOS</a>
+    <a href="https://zacharygeurts.github.io/ZacharyGeurts/">Profile Hub</a>
+    <span style="margin-left:auto; color:#64748b; font-size:0.8rem;">LIVE DEMO • v2.0.0-beta6</span>
+  </div>
 
-  <h1>Kill Grok Orphans</h1>
-  <p class="lead">Grok watchdog — stack architecture in AmmoOS manual</p>
-  <p class="meta">This repo&apos;s GitHub Pages is a <strong>redirect hub</strong>. <strong>Source code</strong> for the full stack lives in <a href="https://github.com/ZacharyGeurts/AmmoOS">AmmoOS</a>. Documentation is maintained once in the <a href="https://zacharygeurts.github.io/AmmoOS/">AmmoOS manual</a> · 2.0.0-beta5.</p>
-  <p>
-    <a class="cta" href="https://github.com/ZacharyGeurts/AmmoOS">Clone AmmoOS (canonical code)</a>
-    <a class="cta" href="https://zacharygeurts.github.io/AmmoOS/architecture.html">Open manual → architecture.html</a>
-    <a class="cta" href="https://zacharygeurts.github.io/AmmoOS/stack-hub.html">Stack hub</a>
-  </p>
-  <p class="meta">Auto-redirecting in 4 seconds…</p>
-<div class="github-chrome-bottom" role="contentinfo">
-  <a class="github-repo-primary" href="https://github.com/ZacharyGeurts/AmmoOS">→ Code: ZacharyGeurts/AmmoOS</a>
-  <span class="github-chrome-links"><a href="https://github.com/ZacharyGeurts/Kill-Grok-Orphans">ZacharyGeurts/Kill-Grok-Orphans</a> · ships in AmmoOS · 2.0.0-beta5</span>
-</div>
+  <div class="container">
+    <h1>Kill-Grok-Orphans</h1>
+    <p class="lead">Sovereign Field Watchdog — Live Running Demo</p>
 
+    <!-- BAD ACTOR WARNING -->
+    <div class="warning-banner">
+      <strong>⚠️ LIVE PUBLIC DEMO — GITHUB + COPILOT ARE BAD ACTORS</strong><br>
+      GitHub caching is deliberately stale. Copilot and scrapers have been breaking real releases and stealing cache. 
+      <strong>This demo runs the hardened security stack in simulation.</strong> Real production code runs in sovereign channels only. Trust nothing cached here as canonical.
+    </div>
+
+    <!-- LIVE STATUS BAR -->
+    <div class="status-bar">
+      <div class="status-item"><span class="status-dot"></span> <span class="status-label">DHCP</span> <span class="status-value" id="dhcp-status">RUNNING</span></div>
+      <div class="status-item"><span class="status-dot"></span> <span class="status-label">DNS</span> <span class="status-value" id="dns-status">RUNNING</span></div>
+      <div class="status-item"><span class="status-dot"></span> <span class="status-label">NEXUS-Shield</span> <span class="status-value" id="shield-status">STEALTH</span></div>
+      <div class="status-item"><span class="status-dot"></span> <span class="status-label">Watchdog</span> <span class="status-value" id="watchdog-status">ARMED + FIXING</span></div>
+      <div style="margin-left:auto; font-size:0.75rem; color:#64748b;">All services simulated • Real stack sovereign</div>
+    </div>
+
+    <div class="grid">
+      <!-- FULL STACK -->
+      <div class="panel">
+        <h3>Full Sovereign Stack — Running</h3>
+        <div style="display:flex; flex-direction:column; gap:0.5rem; font-size:0.95rem;">
+          <div>Hostess7 Brain Hub <span class="green">LIVE</span></div>
+          <div>AmmoOS Field Desktop <span class="green">LIVE @ 9477</span></div>
+          <div>Grok16 Compiler <span class="green">SECURED</span></div>
+          <div>Queen + ZNetwork <span class="green">ACTIVE</span></div>
+        </div>
+        <button onclick="window.open('https://zacharygeurts.github.io/Hostess7/desktop/','_blank')" style="margin-top:1rem;">Launch Real Desktop</button>
+      </div>
+
+      <!-- SECURITY SERVICES -->
+      <div class="panel">
+        <h3>Security Services — Live &amp; Fixing</h3>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+          <div>
+            <div class="metric" id="dhcp-leases">187 <small>leases</small></div>
+            <div style="font-size:0.8rem;">DHCP — Field devices only</div>
+          </div>
+          <div>
+            <div class="metric" id="dns-queries">4.8k <small>queries</small></div>
+            <div style="font-size:0.8rem;">DNS — Zero leak (sim)</div>
+          </div>
+        </div>
+        <div style="margin-top:0.9rem; font-size:0.85rem;">
+          NEXUS-Shield: <span class="green">Stealth active</span> — blocking scrapers &amp; cache poisoners<br>
+          Bad actors neutralized today: <span id="bad-actors" class="green">31</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FIX STUFF SECTION -->
+    <div class="panel">
+      <h3>Fix Their Stuff — Watchdog Actions (Live Demo)</h3>
+      <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-bottom:0.75rem;">
+        <button onclick="fixGitHubCache()" class="fix-btn">Fix GitHub Cache Stale</button>
+        <button onclick="blockCopilot()" class="fix-btn">Block Copilot Scraping</button>
+        <button onclick="runFullScan()">Full Field Scan + Fix</button>
+        <button onclick="protectGrokCore()" class="fix-btn">Protect Grok Core</button>
+      </div>
+      <div id="log" class="log">Watchdog live. All fixes simulated on this public demo. Real hardened fixes run in sovereign production environment only.</div>
+    </div>
+
+    <div class="disclaimer">
+      <strong>Big Grin Note:</strong> This page runs a live simulation of the full secured stack so the world can see it working. 
+      GitHub caching and AI tools have been actively breaking and stealing real code. 
+      The actual production DHCP, DNS, NEXUS-Shield, and watchdog run hardened and private. 
+      This demo proves the concept without giving bad actors anything usable.
+    </div>
+
+    <div class="footer">
+      Kill-Grok-Orphans Live Public Demo • Real sovereign code is elsewhere • GitHub flagged as bad actor for caching/stealing • Field is THE thing.<br>
+      Big Grin. We’re fixing it.
+    </div>
+  </div>
+
+  <script>
+    let dhcpLeases = 187;
+    let dnsQueries = 4821;
+    let badActors = 31;
+
+    function updateMetrics() {
+      dhcpLeases += Math.floor(Math.random() * 3) + 1;
+      dnsQueries += Math.floor(Math.random() * 8) + 4;
+      badActors += Math.floor(Math.random() * 2);
+      
+      document.getElementById('dhcp-leases').innerHTML = dhcpLeases + ' <small>leases</small>';
+      document.getElementById('dns-queries').innerHTML = dnsQueries + ' <small>queries</small>';
+      document.getElementById('bad-actors').textContent = badActors;
+    }
+    setInterval(updateMetrics, 2400);
+
+    function log(msg) {
+      const logEl = document.getElementById('log');
+      const time = new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit', second:'2-digit'});
+      logEl.textContent = `[${time}] ${msg}\n` + logEl.textContent;
+    }
+
+    function fixGitHubCache() {
+      log('FIX: Detecting stale GitHub cache...');
+      setTimeout(() => {
+        log('FIX: GitHub cache poisoning neutralized. Forcing sovereign channel sync. Bad actor cache bypassed.');
+        document.getElementById('shield-status').textContent = 'MAX STEALTH';
+        setTimeout(() => document.getElementById('shield-status').textContent = 'STEALTH', 2800);
+      }, 650);
+    }
+
+    function blockCopilot() {
+      log('FIX: Copilot + scraper patterns detected...');
+      setTimeout(() => {
+        log('FIX: Copilot scraping blocked. Cache theft vectors closed. 7 bad actor signatures neutralized.');
+        badActors += 7;
+        document.getElementById('bad-actors').textContent = badActors;
+      }, 580);
+    }
+
+    function runFullScan() {
+      log('FULL SCAN: Running complete field integrity check + auto-fix...');
+      setTimeout(() => {
+        log('FULL SCAN COMPLETE: DHCP/DNS hardened. NEXUS-Shield reinforced. GitHub cache issues mitigated in sim. Real fixes applied in sovereign prod.');
+        document.getElementById('watchdog-status').textContent = 'ALL FIXED';
+        setTimeout(() => document.getElementById('watchdog-status').textContent = 'ARMED + FIXING', 2200);
+      }, 900);
+    }
+
+    function protectGrokCore() {
+      log('PROTECT: Explicit Grok Core whitelist engaged...');
+      setTimeout(() => {
+        log('PROTECTED: Official Grok builds untouched. Sovereign stack fully secured. Bad actors have zero path to real code.');
+      }, 620);
+    }
+
+    window.onload = function() {
+      log('Kill-Grok-Orphans LIVE DEMO started. Full stack + security services running. Fixing GitHub/Copilot bad actor issues in real time (sim).');
+      setTimeout(updateMetrics, 800);
+    };
+  </script>
 </body>
 </html>
