@@ -1,7 +1,7 @@
-# Kill Grok Orphans v0.7.7 LIVE FIELD
+# Kill Grok Orphans v0.9.7
 
-Spiderwire live update everywhere. Kill/re-kill Field UDP power. No caches, no CDN. Wide open protected internet.
+Hash everything. Always live/valid. Secure tamper-proof distributed update (no GitHub/Copilot interference). Update button in panel.
 
-Latest download direct: https://github.com/ZacharyGeurts/Kill-Grok-Orphans/releases/latest/download/kgo-0.7.7-linux-gnu-x86_64.tar.gz
+Latest: https://zacharygeurts.github.io/Kill-Grok-Orphans/ 
 
-NEXUS/Hostess7 integration active.
+Workflow publishing...

@@ -1,1 +1,1 @@
-{"live_update": true, "spiderwire": true, "field_udp_power": true, "no_cache": true, "no_cdn": true, "wide_open_protected": true}
+{"version": "0.9.7", "hash_verify": true, "always_live": true, "tamper_proof": true, "secure_distributed": true, "update_button": true}
