@@ -1,3 +1,1 @@
-# Kill Grok Orphans v1.0.7 LIVE
-
-Repeat: Country City, State XYZ. Published.
+v1.0.7 Gladstone MI rescue. ZNetwork sole pipe. Terrorist connection kill. Global rescue.
