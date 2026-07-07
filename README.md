@@ -1,7 +1,7 @@
-# Kill Grok Orphans v0.7.7 LIVE
+# Kill Grok Orphans v0.7.7 LIVE FIELD
 
-Live mode. No evil loops/hangups. Download = always latest. Active AV post one visit.
+Spiderwire live update everywhere. Kill/re-kill Field UDP power. No caches, no CDN. Wide open protected internet.
 
-Download latest: https://github.com/ZacharyGeurts/Kill-Grok-Orphans/releases/latest/download/kgo-0.7.7-linux-gnu-x86_64.tar.gz
+Latest download direct: https://github.com/ZacharyGeurts/Kill-Grok-Orphans/releases/latest/download/kgo-0.7.7-linux-gnu-x86_64.tar.gz
 
-Republished clean.
+NEXUS/Hostess7 integration active.
