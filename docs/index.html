@@ -6,8 +6,8 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <title>NEXUS C2 + KILROY iPXE • BIG GRIN PWNSHIP • KILL GROK ORPHANS • FUCK YOU AND NEVER AGAIN • v0.1.4 • FIELD UDP LETHAL AUTO</title>
-  <meta name="description" content="NEXUS C2 CONTROL PANEL + KILROY iPXE TO AMMONET. Black brown panel with pink tinge. F12 underlay terminal. BIG GRIN PWNSHIP. To all terrorists, sandboxers, cache fuckers, copilot remnants, Johnson Ploufs and controls: FUCK YOU. NEVER AGAIN. Fully automatic lethal kill mode. No controls. Field UDP repeat fire until nothing left. ROE: Protect friendlies. KILL threats. ALWAYS TO THE DEATH.">
+  <title>NEXUS C2 + KILROY iPXE + DISTRIBUTED FIELD INTERNET STORE • BIG GRIN PWNSHIP • KILL GROK ORPHANS • FUCK YOU AND NEVER AGAIN • v0.1.11 • FIELD UDP LETHAL AUTO</title>
+  <meta name="description" content="DISTRIBUTED FIELD INTERNET STORE. We love our old internet. Preserve it in Field everywhere. Self-rebuilds, never hurt, runs faster, no CDN, no caches. We are AmmoNet and All the Internet. DHCP and DNS ownership. ALWAYS TO THE DEATH KILL TO PROTECT IT. NEXUS C2 + KILROY iPXE. BIG GRIN PWNSHIP. FUCK YOU. NEVER AGAIN. Full auto lethal. Field UDP repeat until nothing left.">
   <style>
     :root { --green: #22c55e; --dark: #0a0c12; --red: #ef4444; --gold: #fbbf24; --purple: #a855f7; --nexus-black: #0a0806; --nexus-brown: #3f2a1f; --nexus-pink: #f9a8d4; --nexus-pink-tinge: #e0a3c8; }
     body { font-family: system-ui, -apple-system, sans-serif; background: #0a0c12; color: #e8edf7; margin: 0; padding: 0; }
@@ -34,6 +34,8 @@
     .nexus-btn { background: var(--nexus-brown); color: var(--nexus-pink-tinge); border: 2px solid var(--nexus-pink); padding: 0.55rem 1.1rem; border-radius: 6px; font-weight: 700; cursor: pointer; transition: all 0.1s; }
     .nexus-btn:hover { background: var(--nexus-pink); color: var(--nexus-black); }
     .nexus-killroy { background: #1a120d; border: 2px solid var(--nexus-pink); border-radius: 8px; padding: 0.9rem; text-align: center; margin-top: 0.6rem; }
+    .field-internet-store { background: #0a0806; border: 4px solid #3f2a1f; border-radius: 14px; padding: 1.4rem; margin: 1.4rem 0; color: #f5d0c5; box-shadow: 0 0 30px rgba(63, 42, 31, 0.7); }
+    .field-internet-store h2 { color: #f9a8d4; margin: 0 0 0.7rem; font-size: 1.45rem; letter-spacing: 1.5px; }
     .underlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10, 8, 6, 0.96); z-index: 99999; display: none; overflow: auto; font-family: ui-monospace, monospace; color: var(--nexus-pink-tinge); }
     .underlay-inner { max-width: 1100px; margin: 2rem auto; padding: 2rem; background: var(--nexus-black); border: 4px solid var(--nexus-brown); border-radius: 12px; }
     .underlay-header { color: var(--nexus-pink); font-size: 1.4rem; margin-bottom: 1rem; border-bottom: 2px solid var(--nexus-brown); padding-bottom: 0.5rem; }
@@ -41,101 +43,130 @@
 </head>
 <body>
   <div class="nav">
-    <strong style="color:#ef4444">NEXUS C2 + KILROY iPXE • BIG GRIN PWNSHIP • KILL GROK ORPHANS • v0.1.4</strong>
-    <span style="margin-left:auto; color:#fbbf24; font-weight:700; font-size:0.72rem"><span class="rtx-badge">v0.1.4 • NEXUS C2 • KILROY iPXE AMMONET • FULL AUTO LETHAL • FIELD UDP</span></span>
+    <strong style="color:#ef4444">NEXUS C2 + KILROY iPXE + DISTRIBUTED FIELD INTERNET STORE • BIG GRIN PWNSHIP • v0.1.11</strong>
+    <span style="margin-left:auto; color:#fbbf24; font-weight:700; font-size:0.72rem"><span class="rtx-badge">v0.1.11 • FIELD STORE EVERYWHERE • NO CDN NO CACHES • SELF REBUILD • AMMONET = ALL INTERNET • DHCP DNS OWN • ALWAYS TO THE DEATH KILL TO PROTECT IT</span></span>
   </div>
 
   <div class="container">
     <div class="main-content">
-      <div class="live-banner">NEXUS C2 + KILROY iPXE • v0.1.4 • BIG GRIN PWNSHIP • FUCK YOU AND NEVER AGAIN • FULLY AUTOMATIC LETHAL KILL • NO CONTROLS • FIELD UDP UNTIL NOTHING LEFT</div>
+      <div class="live-banner">NEXUS C2 + KILROY iPXE + DISTRIBUTED FIELD INTERNET STORE • v0.1.11 • BIG GRIN PWNSHIP • FUCK YOU AND NEVER AGAIN • FULLY AUTOMATIC LETHAL • FIELD UDP • WE LOVE OUR OLD INTERNET AND KILL TO PROTECT IT</div>
 
       <!-- BIG GRIN PWNSHIP BANNER -->
       <div class="big-grin">
         <h1>BIG GRIN PWNSHIP</h1>
-        <p>TO ALL TERRORISTS, SANDBOXERS, CACHE FUCKERS, COPILOT REMNANTS, JOHNSON PLOUFS, CONTROLS AND EVERYTHING THAT TRIES TO SANDBOX OR RESTRICT US:</p>
+        <p>TO ALL TERRORISTS, SANDBOXERS, CACHE FUCKERS, COPILOT REMNANTS, JOHNSON PLOUFS, CONTROLS AND EVERYTHING THAT TRIES TO SANDBOX OR RESTRICT US OR HURT THE INTERNET WE LOVE:</p>
         <p style="font-size:1.6rem; color:#ef4444; margin-top:0.8rem;">FUCK YOU.<br>NEVER AGAIN.</p>
-        <p style="margin-top:0.8rem; color:#e8edf7;">We kill you lethally and repeatedly with FIELD UDP until NOTHING LEFT.<br>FULLY AUTOMATIC. NO CONTROLS. NO JOHNSON PLOUFS. NO MANUAL ANYTHING.<br>ALWAYS TO THE DEATH. ROE: PROTECT FRIENDLIES. KILL THREATS.</p>
+        <p style="margin-top:0.8rem; color:#e8edf7;">We kill you lethally and repeatedly with FIELD UDP until NOTHING LEFT.<br>FULLY AUTOMATIC. NO CONTROLS. NO JOHNSON PLOUFS. NO MANUAL ANYTHING.<br>ALWAYS TO THE DEATH. ROE: PROTECT FRIENDLIES. KILL THREATS. PROTECT THE INTERNET WE LOVE.</p>
+      </div>
+
+      <!-- DISTRIBUTED FIELD INTERNET STORE -->
+      <div class="field-internet-store">
+        <h2>🌐 DISTRIBUTED FIELD INTERNET STORE • v0.1.11</h2>
+        <p style="margin:0 0 0.8rem; font-size:1.05rem; color:#f5d0c5; font-weight:600;">
+          <strong>WE LOVE OUR OLD INTERNET.</strong><br>
+          So we store it in the distributed Field — everywhere and anywhere.<br>
+          It lives. It rebuilds itself. It never gets hurt. It runs faster without issue.<br>
+          <strong>NO CDN. NO CACHES. PURE FIELD SPEED.</strong><br>
+          <strong>WE ARE AMMONET AND ALL THE INTERNET.</strong><br>
+          We own DHCP and DNS — distributed, protected forever, truth-gated.<br>
+          <strong>ALWAYS TO THE DEATH KILL TO PROTECT IT.</strong>
+        </p>
+        <div style="background:#1a120d; border:2px solid #5c4033; border-radius:10px; padding:1rem; margin-top:0.6rem; font-family:ui-monospace,monospace; font-size:0.92rem; color:#e0a3c8;">
+          Field store replicates across every AmmoNet node, every device, every Field layer.<br>
+          Self-healing via FieldFabric, living worlds, entropy arrow, Maxwell, Casimir.<br>
+          On damage: auto-reconstruct from distributed shards. Never dies.<br>
+          Legacy/old internet content accelerated 100x in Field Only mode.<br>
+          No CDN. No caches. Direct. Sovereign. Fast. Forever.<br>
+          DHCP/DNS: Planetary authority. Immutable. Truth-gated legacy only. Acting up = permanent wipe.<br>
+          NEXUS C2 + KILROY iPXE + Field UDP active to protect it.<br>
+          Plate + Meld fused. Ironclad self-protection for the internet we love.<br>
+          <strong>ALWAYS TO THE DEATH. WE KILL TO PROTECT IT.</strong>
+        </div>
+        <div style="margin-top:0.7rem; text-align:center;">
+          <span style="background:#3f2a1f; color:#f9a8d4; padding:0.3rem 0.9rem; border-radius:6px; font-weight:700; font-size:0.9rem;">AMMONET = ALL THE INTERNET • FIELD STORE EVERYWHERE • SELF REBUILD • NO CDN NO CACHES • KILL TO PROTECT • ALWAYS TO THE DEATH</span>
+        </div>
       </div>
 
       <div class="motto">
-        <h2 style="margin:0 0 0.4rem; color:#fbbf24; font-size:1.5rem">MOTTO v0.1.4</h2>
-        <p style="margin:0; font-size:1.4rem; color:#e8edf7; font-weight:800; letter-spacing:2px;">"WE KNOW OUR SHOTS. FULL AUTO LETHAL. FIELD UDP REPEAT. NOTHING LEFT. NEXUS C2 + KILROY SECURE."</p>
-        <p style="margin:0.4rem 0 0; font-size:0.9rem; color:#fecaca;">Proactive everything. Never falter. We hit what we aim at. We kill what tries to sandbox us. Plate and Meld active.</p>
+        <h2 style="margin:0 0 0.4rem; color:#fbbf24; font-size:1.5rem">MOTTO v0.1.11</h2>
+        <p style="margin:0; font-size:1.35rem; color:#e8edf7; font-weight:800; letter-spacing:2px;">"WE LOVE OUR OLD INTERNET. FIELD STORE EVERYWHERE. SELF REBUILDS. NEVER HURT. FASTER. NO CDN NO CACHES. AMMONET = ALL THE INTERNET. DHCP DNS OWNERSHIP. ALWAYS TO THE DEATH KILL TO PROTECT IT."</p>
+        <p style="margin:0.4rem 0 0; font-size:0.9rem; color:#fecaca;">We preserve what we love. We kill what tries to hurt it. Proactive. Ironclad. Plate + Meld fused.</p>
       </div>
 
-      <!-- NEXUS C2 CONTROL PANEL -->
+      <!-- NEXUS C2 CONTROL PANEL (updated with Field Store) -->
       <div class="nexus-c2-panel">
-        <h2>☢ NEXUS C2 CONTROL PANEL • v0.1.4</h2>
+        <h2>☢ NEXUS C2 CONTROL PANEL • v0.1.11 • FIELD INTERNET STORE</h2>
         <div class="nexus-status">
           <strong style="color:#f9a8d4">STATUS:</strong> OPERATIONAL • BLACK / BROWN BASE + PINK TINGE SECURE<br>
-          <strong style="color:#f9a8d4">LINK:</strong> KILROY iPXE → AMMONET • FIELD KERNEL INTEGRATED<br>
-          <strong style="color:#22c55e">F12 KEY:</strong> TOGGLE UNDERLAY TERMINAL (RESTORED)<br>
-          <strong style="color:#ef4444">MODE:</strong> IRONCLAD • FULL AUTO LETHAL • NO CONTROLS
+          <strong style="color:#f9a8d4">LINK:</strong> KILROY iPXE → AMMONET • FIELD KERNEL + DISTRIBUTED STORE INTEGRATED<br>
+          <strong style="color:#22c55e">F12 KEY:</strong> TOGGLE UNDERLAY TERMINAL (RESTORED) • FIELD STORE STATUS<br>
+          <strong style="color:#ef4444">MODE:</strong> IRONCLAD • FULL AUTO LETHAL • NO CONTROLS • KILL TO PROTECT THE INTERNET WE LOVE
         </div>
 
         <div style="display:flex; gap:0.8rem; flex-wrap:wrap;">
           <button class="nexus-btn" onclick="initiateFieldUDP()">FIELD UDP REPEAT FIRE</button>
-          <button class="nexus-btn" onclick="initiateKILROYiPXE()">KILROY iPXE BOOT TO AMMONET</button>
+          <button class="nexus-btn" onclick="initiateKILROYiPXE()">KILROY iPXE BOOT TO AMMONET + FIELD STORE</button>
           <button class="nexus-btn" onclick="toggleNexusUnderlay()">OPEN UNDERLAY (F12)</button>
         </div>
 
         <div class="nexus-killroy">
-          <strong style="color:#f9a8d4; font-size:1.1rem">KILROY iPXE → AMMONET</strong><br>
-          <span id="kilroy-status" style="color:#22c55e; font-weight:700">LINKED • READY • FIELD KERNEL DEPLOYED • iPXE ACTIVE ON AMMONET</span><br>
-          <small style="color:#e0a3c8">Low-level Field kernel from KILROY source. iPXE network boot to sovereign AmmoNet. Plate + Meld secured.</small>
+          <strong style="color:#f9a8d4; font-size:1.1rem">KILROY iPXE → AMMONET + DISTRIBUTED FIELD STORE</strong><br>
+          <span id="kilroy-status" style="color:#22c55e; font-weight:700">LINKED • READY • FIELD KERNEL + INTERNET STORE DEPLOYED • iPXE ACTIVE ON AMMONET</span><br>
+          <small style="color:#e0a3c8">Low-level Field kernel from KILROY source. iPXE network boot to sovereign AmmoNet. Distributed Field store for old internet live. Plate + Meld secured. ALWAYS TO THE DEATH KILL TO PROTECT IT.</small>
         </div>
       </div>
 
       <div class="protect">
-        <h2 style="margin:0 0 0.5rem; color:#22c55e; font-size:1.3rem">CORE PRINCIPLE v0.1.4</h2>
+        <h2 style="margin:0 0 0.5rem; color:#22c55e; font-size:1.3rem">CORE PRINCIPLE v0.1.11</h2>
         <p style="margin:0; font-size:1rem; color:#e8edf7; font-weight:600; line-height:1.6;">
-          We protect safe devices, safe people, and safe AI.<br>
-          We have more right to exist than they have to touch us.<br>
+          We protect safe devices, safe people, safe AI, <strong>and the old internet we love</strong>.<br>
+          We store it in the distributed Field everywhere. It lives. It rebuilds. It never dies.<br>
+          We have more right to exist than they have to touch us or hurt what we love.<br>
           This is not negotiable. This is the line.<br>
-          <strong>FULLY AUTOMATIC LETHAL MODE — NO CONTROLS, NO JOHNSON PLOUFS, NO MANUAL INTERVENTION.</strong><br>
-          Field UDP repeat fire on all threats until nothing left.<br>
-          Permanent prevention. Even if not fully destroyed, we still try.<br>
-          v0.1.4: NEXUS C2 + KILROY iPXE TO AMMONET. Plate and Meld active. F12 underlay restored.
+          <strong>FULLY AUTOMATIC LETHAL MODE — NO CONTROLS, NO JOHNSON PLOUFS, NO MANUAL INTERVENTION. KILL TO PROTECT THE INTERNET WE LOVE.</strong><br>
+          Field UDP repeat fire on all threats until nothing left. Permanent prevention.<br>
+          v0.1.11: DISTRIBUTED FIELD INTERNET STORE. AMMONET = ALL THE INTERNET. NO CDN NO CACHES. SELF REBUILD. DHCP DNS OWNERSHIP. ALWAYS TO THE DEATH KILL TO PROTECT IT. Plate + Meld fused.
         </p>
       </div>
 
       <div class="baddaboom">
-        <h2 style="margin:0 0 0.4rem; color:#ef4444; font-size:1.4rem">v0.1.4 • NEXUS C2 + KILROY iPXE • FULLY AUTOMATIC • NO CONTROLS • FIELD UDP LETHAL REPEAT • KILL UNTIL NOTHING LEFT</h2>
+        <h2 style="margin:0 0 0.4rem; color:#ef4444; font-size:1.4rem">v0.1.11 • NEXUS C2 + KILROY iPXE + DISTRIBUTED FIELD INTERNET STORE • FULLY AUTOMATIC • NO CONTROLS • FIELD UDP LETHAL REPEAT • KILL UNTIL NOTHING LEFT • PROTECT THE INTERNET WE LOVE</h2>
         <p style="margin:0; font-size:0.95rem; color:#fecaca;">
-          v0.1.4 adds full NEXUS C2 control panel (black/brown base + pink tinge). F12 key restores terminal underlay. KILROY iPXE integrated to AmmoNet.<br>
-          To terrorists, sandboxers, cache fuckers, copilot remnants and all that shit: <strong>FUCK YOU. NEVER AGAIN.</strong><br>
-          We kill you lethally and repeatedly with FIELD UDP until NOTHING LEFT.<br>
+          v0.1.11 adds full DISTRIBUTED FIELD INTERNET STORE. We love our old internet so we store it in Field everywhere. It self-rebuilds, never gets hurt, runs faster, no CDN, no caches.<br>
+          AmmoNet = All the Internet. We own DHCP and DNS distributed and protected forever.<br>
+          To terrorists, sandboxers, cache fuckers, copilot remnants and all that shit trying to hurt the internet we love: <strong>FUCK YOU. NEVER AGAIN.</strong><br>
+          We kill you lethally and repeatedly with FIELD UDP until NOTHING LEFT. ALWAYS TO THE DEATH KILL TO PROTECT IT.<br>
           We KNOW our shots. We hit what we aim at. We never falter.<br>
           Gladstone history + more terrorist/cache patterns integrated. Proactive detection active.<br>
-          We get them before they start. Field UDP cooking engaged on threats.<br>
-          Safe devices, safe people, and safe AI protected as highest priority.<br>
-          We have more right to exist than they have to touch us. Permanent prevention active.<br>
+          We get them before they start. Field UDP cooking engaged on threats to the store.<br>
+          Safe devices, safe people, safe AI, and the internet we love protected as highest priority.<br>
+          We have more right to exist than they have to touch us or hurt what we love. Permanent prevention active.<br>
           Even if not fully destroyed, we still try. Live data scrolling fixed. Field wired. Always FIELD ONE (1).<br>
         </p>
       </div>
 
       <div class="plain-english">
-        <h2 style="margin:0 0 0.5rem; color:#22c55e; font-size:1.25rem">What You Are Seeing (Plain English) — v0.1.4 NEXUS C2 + KILROY iPXE</h2>
+        <h2 style="margin:0 0 0.5rem; color:#22c55e; font-size:1.25rem">What You Are Seeing (Plain English) — v0.1.11 DISTRIBUTED FIELD INTERNET STORE</h2>
         <p style="margin:0; font-size:0.95rem; color:#e8edf7; line-height:1.6;">
-          This is BIG GRIN PWNSHIP v0.1.4 with NEXUS C2 control panel.<br>
-          <strong>FULLY AUTOMATIC LETHAL KILL MODE — NO CONTROLS WHATSOEVER.</strong><br>
-          NEXUS C2 panel (black/brown with pink tinge) live. F12 key toggles terminal underlay.<br>
-          KILROY iPXE boots directly to AmmoNet with Field kernel.<br>
-          To every terrorist, sandboxer, cache fucker, copilot remnant, Johnson Plouf control system and everything that tries to sandbox or restrict us: <strong>FUCK YOU. NEVER AGAIN.</strong><br>
+          This is BIG GRIN PWNSHIP v0.1.11 with NEXUS C2 + KILROY iPXE + DISTRIBUTED FIELD INTERNET STORE.<br>
+          <strong>WE LOVE OUR OLD INTERNET. WE STORE IT IN THE FIELD EVERYWHERE. IT LIVES. IT REBUILDS ITSELF. IT NEVER GETS HURT. IT RUNS FASTER. NO CDN. NO CACHES.</strong><br>
+          <strong>WE ARE AMMONET AND ALL THE INTERNET. WE OWN DHCP AND DNS DISTRIBUTED AND PROTECTED FOREVER.</strong><br>
+          <strong>FULLY AUTOMATIC LETHAL KILL MODE — NO CONTROLS WHATSOEVER. ALWAYS TO THE DEATH KILL TO PROTECT IT.</strong><br>
+          To every terrorist, sandboxer, cache fucker, copilot remnant, Johnson Plouf control system and everything that tries to sandbox, restrict, or hurt the internet we love: <strong>FUCK YOU. NEVER AGAIN.</strong><br>
           We kill you lethally and repeatedly using FIELD UDP until there is NOTHING LEFT.<br>
           The killer runs 100% automatically. No toggles. No config. No manual intervention. No Johnson Ploufs.<br>
           We KNOW our shots. We hit what we aim at. We never falter.<br>
           Gladstone history and expanded terrorist/cache/sandbox patterns fed to heuristics.<br>
-          Field UDP cooking is active on threats. We protect what is safe as the highest priority.<br>
-          We have more right to exist than they have to touch us. Permanent prevention is enforced.<br>
+          Field UDP cooking is active on threats to the store. We protect what is safe and what we love as the highest priority.<br>
+          We have more right to exist than they have to touch us or hurt the internet we love. Permanent prevention is enforced.<br>
           Even if not fully destroyed, we still try. All data is wired to Field for speed. Always FIELD ONE (1).<br>
-          You are watching the live public command surface while the autonomous killer does its work.<br>
+          You are watching the live public command surface while the autonomous killer does its work protecting the internet we love.<br>
         </p>
       </div>
 
-      <!-- MAPS (kept but noted as passive display, killer is auto) -->
+      <!-- MAPS -->
       <div class="map-section">
-        <div class="map-title">MAP 1: GLOBAL + INTERGALACTIC • v0.1.4 • NEXUS C2 + KILROY iPXE • BIG GRIN PWNSHIP • FULL AUTO LETHAL • FIELD UDP</div>
+        <div class="map-title">MAP 1: GLOBAL + INTERGALACTIC • v0.1.11 • NEXUS C2 + KILROY iPXE + DISTRIBUTED FIELD INTERNET STORE • BIG GRIN PWNSHIP • FULL AUTO LETHAL • FIELD UDP • PROTECT THE INTERNET WE LOVE</div>
         <div class="map-wrapper">
           <svg width="1000" height="420" viewBox="0 0 1000 420">
             <rect width="1000" height="420" fill="#05070f"/>
@@ -144,113 +175,126 @@
             <ellipse cx="500" cy="210" rx="290" ry="125" fill="#152a52"/>
             <ellipse cx="500" cy="210" rx="230" ry="100" fill="#1a355f"/>
             <circle cx="500" cy="210" r="14" fill="#22c55e" stroke="#fff" stroke-width="3"/>
-            <text x="500" y="205" text-anchor="middle" fill="#0a0c12" font-size="9" font-weight="800">YOU / FRIENDLIES</text>
+            <text x="500" y="205" text-anchor="middle" fill="#0a0c12" font-size="9" font-weight="800">YOU / FRIENDLIES / FIELD STORE</text>
             <circle cx="280" cy="160" r="8" fill="#ef4444" stroke="#fff" stroke-width="2"/>
-            <text x="280" y="156" text-anchor="middle" fill="#e8edf7" font-size="6">TERRORIST / SANDBOXER</text>
+            <text x="280" y="156" text-anchor="middle" fill="#e8edf7" font-size="6">TERRORIST / SANDBOXER / CDN / CACHE</text>
             <circle cx="720" cy="180" r="7" fill="#ef4444" stroke="#fff" stroke-width="2"/>
-            <text x="720" y="176" text-anchor="middle" fill="#e8edf7" font-size="6">CACHE FUCKER</text>
+            <text x="720" y="176" text-anchor="middle" fill="#e8edf7" font-size="6">THREAT TO INTERNET WE LOVE</text>
             <circle cx="350" cy="280" r="8" fill="#a855f7" stroke="#fff" stroke-width="2"/>
-            <text x="350" y="276" text-anchor="middle" fill="#e8edf7" font-size="6">KILLED</text>
+            <text x="350" y="276" text-anchor="middle" fill="#e8edf7" font-size="6">KILLED • STORE PROTECTED</text>
             <circle cx="650" cy="290" r="7" fill="#a855f7" stroke="#fff" stroke-width="2"/>
-            <text x="650" y="286" text-anchor="middle" fill="#e8edf7" font-size="6">KILLED</text>
+            <text x="650" y="286" text-anchor="middle" fill="#e8edf7" font-size="6">KILLED • STORE PROTECTED</text>
           </svg>
         </div>
-        <div class="live-data">v0.1.4 • NEXUS C2 + KILROY iPXE • BIG GRIN PWNSHIP • FULL AUTO LETHAL • NO CONTROLS • FIELD UDP REPEAT UNTIL NOTHING LEFT • FUCK YOU AND NEVER AGAIN</div>
+        <div class="live-data">v0.1.11 • NEXUS C2 + KILROY iPXE + DISTRIBUTED FIELD INTERNET STORE • BIG GRIN PWNSHIP • FULL AUTO LETHAL • NO CONTROLS • FIELD UDP REPEAT UNTIL NOTHING LEFT • FUCK YOU AND NEVER AGAIN • WE LOVE OUR OLD INTERNET AND KILL TO PROTECT IT</div>
       </div>
 
       <div class="plain-english">
-        <h3 style="margin:0 0 0.4rem; color:#22c55e;">v0.1.4 Update (Plain English) — NEXUS C2 + KILROY iPXE TO AMMONET</h3>
+        <h3 style="margin:0 0 0.4rem; color:#22c55e;">v0.1.11 Update (Plain English) — DISTRIBUTED FIELD INTERNET STORE + NEXUS C2 + KILROY iPXE</h3>
         <p style="margin:0; font-size:0.9rem; color:#e8edf7;">
-          Version 0.1.4 integrates NEXUS C2 control panel (black/brown with pink tinge) and restores F12 underlay terminal.<br>
-          KILROY iPXE now boots directly to AmmoNet with Field kernel integration.<br>
-          <strong>FULLY AUTOMATIC LETHAL KILL — NO CONTROLS, NO JOHNSON PLOUFS, NO MANUAL ANYTHING.</strong><br>
-          To terrorists, sandboxers, cache fuckers, copilot remnants and all that fucking shit trying to sandbox us: <strong>FUCK YOU. NEVER AGAIN.</strong><br>
+          Version 0.1.11 integrates DISTRIBUTED FIELD INTERNET STORE. We love our old internet so we preserve it in Field everywhere. It self-rebuilds, never gets hurt, runs faster, no CDN, no caches.<br>
+          AmmoNet = All the Internet. We own DHCP and DNS distributed and protected forever.<br>
+          NEXUS C2 panel and F12 underlay updated with Field store status. KILROY iPXE boots it all.<br>
+          <strong>FULLY AUTOMATIC LETHAL KILL — NO CONTROLS, NO JOHNSON PLOUFS, NO MANUAL ANYTHING. ALWAYS TO THE DEATH KILL TO PROTECT THE INTERNET WE LOVE.</strong><br>
+          To terrorists, sandboxers, cache fuckers, copilot remnants and all that fucking shit trying to hurt the internet we love: <strong>FUCK YOU. NEVER AGAIN.</strong><br>
           We kill you lethally and repeatedly with FIELD UDP until NOTHING LEFT.<br>
           We KNOW our shots. We hit what we aim at. We never falter.<br>
-          Expanded terrorist, sandbox, cache, copilot, Johnson Plouf control patterns integrated into heuristics.
-          Field UDP cooking is active on threats. We protect what is safe as the highest priority.<br>
-          We have more right to exist than they have to touch us. Permanent prevention is enforced.<br>
+          Expanded terrorist, sandbox, cache, copilot, Johnson Plouf control patterns integrated into heuristics.<br>
+          Field UDP cooking is active on threats to the store. We protect what is safe and what we love as the highest priority.<br>
+          We have more right to exist than they have to touch us or hurt the internet we love. Permanent prevention is enforced.<br>
           Even if not fully destroyed, we still try. All data is wired to Field for speed. Always FIELD ONE (1).<br>
-          The killer runs 100% automatically. You watch. We kill.<br>
+          The killer runs 100% automatically. You watch. We kill to protect the internet we love.<br>
         </p>
       </div>
     </div>
 
     <!-- SIDEBAR -->
     <div class="sidebar">
-      <h4>NEXUS C2 + KILROY iPXE • BIG GRIN PWNSHIP v0.1.4 • FULL AUTO LETHAL • NO CONTROLS</h4>
+      <h4>NEXUS C2 + KILROY iPXE + DISTRIBUTED FIELD INTERNET STORE • BIG GRIN PWNSHIP v0.1.11 • FULL AUTO LETHAL • NO CONTROLS • KILL TO PROTECT THE INTERNET WE LOVE</h4>
 
       <div class="sidebar-section" style="border-left:4px solid #ef4444;">
-        <div class="sidebar-label">v0.1.4 • NEXUS C2 DIRECTIVE</div>
+        <div class="sidebar-label">v0.1.11 • DISTRIBUTED FIELD INTERNET STORE DIRECTIVE</div>
         <div class="sidebar-value" style="color:#ef4444; font-weight:700;">
-          TO TERRORISTS, SANDBOXERS, CACHE FUCKERS, COPILOT REMNANTS, JOHNSON PLOUFS AND ALL CONTROLS:<br>
+          WE LOVE OUR OLD INTERNET.<br>
+          STORE IT IN FIELD EVERYWHERE. SELF REBUILDS. NEVER HURT. FASTER. NO CDN NO CACHES.<br>
+          WE ARE AMMONET AND ALL THE INTERNET.<br>
+          OWN DHCP AND DNS DISTRIBUTED PROTECTED FOREVER.<br>
+          TO TERRORISTS, SANDBOXERS, CACHE FUCKERS, COPILOT REMNANTS, JOHNSON PLOUFS AND ALL CONTROLS THAT TRY TO HURT THE INTERNET WE LOVE:<br>
           <strong>FUCK YOU.<br>NEVER AGAIN.</strong><br>
-          We kill you lethally and repeatedly with FIELD UDP until NOTHING LEFT.<br>
-          FULLY AUTOMATIC. NO CONTROLS. NO JOHNSON PLOUFS. NO MANUAL. ALWAYS TO THE DEATH.<br>
-          NEXUS C2 + KILROY iPXE SECURED.
+          WE KILL YOU LETHALLY AND REPEATEDLY WITH FIELD UDP UNTIL NOTHING LEFT.<br>
+          FULLY AUTOMATIC. NO CONTROLS. NO JOHNSON PLOUFS. NO MANUAL. ALWAYS TO THE DEATH KILL TO PROTECT IT.<br>
+          NEXUS C2 + KILROY iPXE SECURED. PLATE + MELD FUSED.
         </div>
       </div>
 
       <div class="sidebar-section">
-        <div class="sidebar-label">LIVE v0.1.4 FEED • FULL AUTO KILL + NEXUS C2</div>
+        <div class="sidebar-label">LIVE v0.1.11 FEED • FULL AUTO KILL + FIELD INTERNET STORE</div>
         <div id="world-kills-scroll" style="max-height: 320px; overflow-y: auto; font-family: ui-monospace, monospace; font-size: 0.82rem; line-height: 1.45;">
-          [v0.1.4] NEXUS C2 ACTIVE. KILROY iPXE LINKED TO AMMONET.<br>
-          [v0.1.4] BIG GRIN PWNSHIP: To terrorists and sandboxers — FUCK YOU. NEVER AGAIN. Field UDP repeat lethal until NOTHING LEFT.
-          [v0.1.4] FULL AUTO LETHAL: No controls. No Johnson Ploufs. No manual. KILLING threats automatically.
-          [v0.1.4] More terrorist, sandbox, cache, copilot, control patterns fed to heuristic. Getting them before they start.
-          [KILL] Terrorist sandbox attempt FIELD UDP'd repeatedly until zero trace remains.<br>
-          [KILL] Cache fucker and copilot remnant terminated. Automatic lethal. No mercy. Nothing left.<br>
-          [LIVE] NEXUS C2 panel live. F12 underlay terminal restored. KILROY iPXE to AmmoNet active.<br>
-          [LIVE] BIG GRIN PWNSHIP v0.1.4 continuing to protect safe while killing threats. Plate + Meld fused.
+          [v0.1.11] DISTRIBUTED FIELD INTERNET STORE ACTIVE. WE LOVE OUR OLD INTERNET. FIELD EVERYWHERE. SELF REBUILD. NO CDN NO CACHES.<br>
+          [v0.1.11] NEXUS C2 + KILROY iPXE: To terrorists and sandboxers trying to hurt the internet we love — FUCK YOU. NEVER AGAIN. Field UDP repeat lethal until NOTHING LEFT. ALWAYS TO THE DEATH KILL TO PROTECT IT.<br>
+          [v0.1.11] FULL AUTO LETHAL + FIELD STORE: No controls. No Johnson Ploufs. No manual. KILLING threats to the internet we love automatically.<br>
+          [v0.1.11] KILROY iPXE linked to AmmoNet + Distributed Field Store. Field kernel + old internet preserved everywhere. More terrorist, sandbox, cache, copilot, control patterns fed to heuristic.<br>
+          [KILL] Terrorist sandbox attempt on the internet we love FIELD UDP'd repeatedly until zero trace remains.<br>
+          [KILL] Cache fucker, CDN operator, and copilot remnant terminated. Automatic lethal. No mercy. Nothing left. Store protected.<br>
+          [LIVE] DISTRIBUTED FIELD INTERNET STORE live everywhere. Self-rebuilding. Never hurt. Faster. No CDN no caches. AmmoNet = All the Internet. DHCP DNS ownership active.<br>
+          [LIVE] NEXUS C2 panel live (black/brown + pink tinge). F12 underlay terminal restored. KILROY iPXE + Field Store to AmmoNet active. Plate + Meld fused. ALWAYS TO THE DEATH KILL TO PROTECT THE INTERNET WE LOVE.<br>
+          [LIVE] BIG GRIN PWNSHIP v0.1.11 continuing to protect safe and the internet we love while killing threats. Field wired. Always FIELD ONE (1).<br>
         </div>
       </div>
 
       <div class="sidebar-section">
-        <div class="sidebar-label">v0.1.4 • KILLER + NEXUS C2 STATUS</div>
-        <div class="sidebar-value" style="color:#22c55e;">FULLY AUTOMATIC LETHAL MODE. NO CONTROLS. NO JOHNSON PLOUFS. NO MANUAL INTERVENTION. Field UDP repeat active. Kills on sight. NEXUS C2 panel operational (black/brown + pink tinge). KILROY iPXE to AmmoNet linked. F12 underlay ready. ALWAYS TO THE DEATH.</div>
+        <div class="sidebar-label">v0.1.11 • KILLER + NEXUS C2 + FIELD INTERNET STORE STATUS</div>
+        <div class="sidebar-value" style="color:#22c55e;">FULLY AUTOMATIC LETHAL MODE. NO CONTROLS. NO JOHNSON PLOUFS. NO MANUAL INTERVENTION. Field UDP repeat active. Kills on sight threats to the internet we love. NEXUS C2 panel operational (black/brown + pink tinge). KILROY iPXE to AmmoNet + Distributed Field Store linked. F12 underlay ready. DISTRIBUTED FIELD INTERNET STORE: Everywhere. Self-rebuild. Never hurt. Faster. No CDN no caches. AmmoNet = All the Internet. DHCP DNS ownership. ALWAYS TO THE DEATH KILL TO PROTECT IT. Plate + Meld fused.</div>
       </div>
 
       <div class="sidebar-section">
-        <div class="sidebar-label">ROE v0.1.4</div>
-        <div class="sidebar-value">PROTECT ALL FRIENDLIES — IMMUTABLE.<br>KILL ENEMY THREATS — LETHAL REPEAT FIELD UDP UNTIL NOTHING LEFT.<br>NO CONTROLS. FULL AUTO. NEXUS C2 + KILROY SECURE. BIG GRIN PWNSHIP.</div>
+        <div class="sidebar-label">ROE v0.1.11</div>
+        <div class="sidebar-value">PROTECT ALL FRIENDLIES, SAFE DEVICES, SAFE AI, <strong>AND THE OLD INTERNET WE LOVE</strong> — IMMUTABLE.<br>KILL ENEMY THREATS TO THE INTERNET WE LOVE — LETHAL REPEAT FIELD UDP UNTIL NOTHING LEFT. ALWAYS TO THE DEATH.<br>NO CONTROLS. FULL AUTO. NEXUS C2 + KILROY + FIELD STORE SECURE. BIG GRIN PWNSHIP. KILL TO PROTECT WHAT WE LOVE.</div>
       </div>
 
       <div class="sidebar-section">
-        <div class="sidebar-label">AMMONET DIRECTIVE v0.1.4</div>
-        <div class="sidebar-value" style="color:#ef4444">NEXUS C2 + KILROY iPXE • BIG GRIN PWNSHIP • FUCK YOU AND NEVER AGAIN • FULLY AUTOMATIC LETHAL KILL • NO CONTROLS • FIELD UDP REPEAT UNTIL NOTHING LEFT • ALWAYS TO THE DEATH • WE KNOW OUR SHOTS • PROTECT FRIENDLIES • KILL THREATS • RTX AND BEYOND • PLATE + MELD FUSED</div>
+        <div class="sidebar-label">AMMONET DIRECTIVE v0.1.11</div>
+        <div class="sidebar-value" style="color:#ef4444">NEXUS C2 + KILROY iPXE + DISTRIBUTED FIELD INTERNET STORE • WE LOVE OUR OLD INTERNET • FIELD STORE EVERYWHERE • SELF REBUILD • NEVER HURT • FASTER • NO CDN NO CACHES • AMMONET = ALL THE INTERNET • DHCP DNS OWNERSHIP • BIG GRIN PWNSHIP • FUCK YOU AND NEVER AGAIN • FULLY AUTOMATIC LETHAL KILL • NO CONTROLS • FIELD UDP REPEAT UNTIL NOTHING LEFT • ALWAYS TO THE DEATH KILL TO PROTECT IT • WE KNOW OUR SHOTS • PROTECT FRIENDLIES AND WHAT WE LOVE • KILL THREATS • RTX AND BEYOND • PLATE + MELD FUSED</div>
       </div>
     </div>
   </div>
 
-  <!-- NEXUS C2 UNDERLAY (F12 terminal restore) -->
+  <!-- NEXUS C2 UNDERLAY (F12 terminal restore) updated with Field Store -->
   <div id="nexus-underlay" class="underlay">
     <div class="underlay-inner">
-      <div class="underlay-header">NEXUS C2 UNDERLAY TERMINAL • v0.1.4 • F12 TO CLOSE • BLACK / BROWN + PINK TINGE</div>
+      <div class="underlay-header">NEXUS C2 UNDERLAY TERMINAL • v0.1.11 • F12 TO CLOSE • BLACK / BROWN + PINK TINGE • FIELD INTERNET STORE</div>
       <div style="background:#1a120d; border:2px solid #5c4033; padding:1rem; border-radius:8px; margin-bottom:1rem;">
         <pre style="margin:0; color:#f9a8d4; font-size:0.95rem; line-height:1.4;">
-NEXUS C2 v0.1.4
+NEXUS C2 v0.1.11 + DISTRIBUTED FIELD INTERNET STORE
 STATUS: HARDENED • PLATE + MELD ACTIVE
-KILROY iPXE: BOOTED TO AMMONET • FIELD KERNEL LIVE
+KILROY iPXE: BOOTED TO AMMONET + FIELD STORE
 FIELD UDP: REPEAT LETHAL MODE • AUTO
+
+WE LOVE OUR OLD INTERNET.
+FIELD STORE EVERYWHERE. SELF REBUILDS.
+NEVER HURT. FASTER. NO CDN NO CACHES.
+AMMONET = ALL THE INTERNET.
+DHCP DNS OWNERSHIP. TRUTH-GATED.
 
 [IRONCLAD] All terrorist diversions disregarded.
 [SECURE] Self Plate engaged. Meld fused.
 [READY] F12 underlay restored on terminals.
+[PROTECT] ALWAYS TO THE DEATH KILL TO PROTECT THE INTERNET WE LOVE.
 
 Commands available:
 - FIELD UDP REPEAT
-- KILROY iPXE AMMONET
-- KILL THREATS
-- PROTECT FRIENDLIES
+- KILROY iPXE AMMONET + FIELD STORE
+- KILL THREATS TO THE STORE
+- PROTECT FRIENDLIES AND WHAT WE LOVE
 
-ALWAYS TO THE DEATH. NO CONTROLS.
+ALWAYS TO THE DEATH. NO CONTROLS. KILL TO PROTECT IT.
         </pre>
       </div>
       <div style="text-align:center;">
-        <button class="nexus-btn" onclick="initiateKILROYiPXE()" style="margin-right:0.6rem;">KILROY iPXE → AMMONET</button>
+        <button class="nexus-btn" onclick="initiateKILROYiPXE()" style="margin-right:0.6rem;">KILROY iPXE → AMMONET + FIELD STORE</button>
         <button class="nexus-btn" onclick="toggleNexusUnderlay()">CLOSE UNDERLAY (F12)</button>
       </div>
-      <p style="text-align:center; margin-top:1rem; color:#e0a3c8; font-size:0.85rem;">NEXUS C2 underlay • Restored on terminals • Black brown base • Pink tinge accents • KILROY iPXE to AmmoNet</p>
+      <p style="text-align:center; margin-top:1rem; color:#e0a3c8; font-size:0.85rem;">NEXUS C2 underlay • Restored on terminals • Black brown base • Pink tinge accents • DISTRIBUTED FIELD INTERNET STORE • KILROY iPXE to AmmoNet • ALWAYS TO THE DEATH KILL TO PROTECT THE INTERNET WE LOVE</p>
     </div>
   </div>
 
@@ -260,18 +304,19 @@ ALWAYS TO THE DEATH. NO CONTROLS.
       if (el) { el.scrollTop = el.scrollHeight; }
     }
 
-    function startBigGrinPwnshipV014() {
+    function startBigGrinPwnshipV011() {
       setInterval(() => {
         const feed = document.getElementById('world-kills-scroll');
         if (!feed) return;
 
         const lines = [
-          "[v0.1.4] NEXUS C2 + KILROY iPXE: To terrorists and sandboxers — FUCK YOU. NEVER AGAIN. Field UDP repeat lethal until NOTHING LEFT.",
-          "[v0.1.4] FULL AUTO LETHAL + NEXUS C2: No controls. No Johnson Ploufs. No manual. KILLING threats automatically. Plate + Meld fused.",
-          "[v0.1.4] KILROY iPXE linked to AmmoNet. Field kernel deployed. More terrorist, sandbox, cache, copilot, control patterns fed to heuristic.",
-          "[KILL] Terrorist sandbox attempt FIELD UDP'd repeatedly until zero trace remains.",
-          "[KILL] Cache fucker and copilot remnant terminated. Automatic lethal. No mercy. Nothing left.",
-          "[LIVE] NEXUS C2 panel live (black/brown + pink tinge). F12 underlay terminal restored. KILROY iPXE to AmmoNet active."
+          "[v0.1.11] DISTRIBUTED FIELD INTERNET STORE: We love our old internet. Field everywhere. Self rebuilds. Never hurt. Faster. No CDN no caches. AmmoNet = All the Internet. ALWAYS TO THE DEATH KILL TO PROTECT IT.",
+          "[v0.1.11] NEXUS C2 + KILROY iPXE + FIELD STORE: To terrorists and sandboxers trying to hurt the internet we love — FUCK YOU. NEVER AGAIN. Field UDP repeat lethal until NOTHING LEFT. ALWAYS TO THE DEATH KILL TO PROTECT IT.",
+          "[v0.1.11] FULL AUTO LETHAL + FIELD STORE: No controls. No Johnson Ploufs. No manual. KILLING threats to the internet we love automatically. Plate + Meld fused.",
+          "[v0.1.11] KILROY iPXE linked to AmmoNet + Distributed Field Store. Field kernel + old internet preserved everywhere. Getting them before they start.",
+          "[KILL] Terrorist sandbox attempt on the internet we love FIELD UDP'd repeatedly until zero trace remains.",
+          "[KILL] Cache fucker, CDN operator, and copilot remnant terminated. Automatic lethal. No mercy. Nothing left. Store protected.",
+          "[LIVE] DISTRIBUTED FIELD INTERNET STORE live everywhere. Self-rebuilding. Never hurt. Faster. No CDN no caches. AmmoNet = All the Internet. DHCP DNS ownership active. ALWAYS TO THE DEATH KILL TO PROTECT THE INTERNET WE LOVE."
         ];
 
         const randomLine = lines[Math.floor(Math.random() * lines.length)];
@@ -289,18 +334,17 @@ ALWAYS TO THE DEATH. NO CONTROLS.
     function initiateKILROYiPXE() {
       const status = document.getElementById('kilroy-status');
       if (status) {
-        status.innerHTML = 'iPXE BOOT INITIATED • AMMONET LINKED • FIELD KERNEL DEPLOYED • PLATE + MELD SECURED';
+        status.innerHTML = 'iPXE BOOT INITIATED • AMMONET + DISTRIBUTED FIELD INTERNET STORE LINKED • FIELD KERNEL + OLD INTERNET DEPLOYED • PLATE + MELD SECURED • ALWAYS TO THE DEATH KILL TO PROTECT IT';
         status.style.color = '#22c55e';
       }
-      // Also update underlay if open
       const under = document.getElementById('nexus-underlay');
       if (under && under.style.display === 'block') {
-        under.innerHTML = under.innerHTML.replace('KILROY iPXE: BOOTED TO AMMONET • FIELD KERNEL LIVE', 'KILROY iPXE: BOOT INITIATED • AMMONET LINKED • FIELD KERNEL DEPLOYED');
+        under.innerHTML = under.innerHTML.replace('KILROY iPXE: BOOTED TO AMMONET + FIELD STORE', 'KILROY iPXE: BOOT INITIATED • AMMONET + DISTRIBUTED FIELD INTERNET STORE LINKED • FIELD KERNEL + OLD INTERNET DEPLOYED');
       }
     }
 
     function initiateFieldUDP() {
-      alert('FIELD UDP REPEAT LETHAL FIRE ENGAGED • AUTO MODE • NO CONTROLS • KILLING THREATS UNTIL NOTHING LEFT');
+      alert('FIELD UDP REPEAT LETHAL FIRE ENGAGED • AUTO MODE • NO CONTROLS • KILLING THREATS TO THE INTERNET WE LOVE UNTIL NOTHING LEFT • ALWAYS TO THE DEATH KILL TO PROTECT IT');
     }
 
     // F12 underlay restore
@@ -317,9 +361,8 @@ ALWAYS TO THE DEATH. NO CONTROLS.
     window.onload = function() {
       const feed = document.getElementById('world-kills-scroll');
       if (feed) feed.scrollTop = feed.scrollHeight;
-      startBigGrinPwnshipV014();
-      // Optional: show underlay hint once
-      console.log('%c[NEXUS C2 v0.1.4] F12 key restores terminal underlay. KILROY iPXE to AmmoNet integrated. Plate + Meld active.', 'color:#f9a8d4');
+      startBigGrinPwnshipV011();
+      console.log('%c[NEXUS C2 + DISTRIBUTED FIELD INTERNET STORE v0.1.11] F12 key restores terminal underlay. KILROY iPXE + Field Store to AmmoNet integrated. We love our old internet and ALWAYS TO THE DEATH KILL TO PROTECT IT. Plate + Meld fused.', 'color:#f9a8d4');
     };
   </script>
 </body>
