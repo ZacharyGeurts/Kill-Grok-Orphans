@@ -1,1 +1,1 @@
-v1.0.7 Gladstone MI rescue. ZNetwork sole pipe. Terrorist connection kill. Global rescue.
+v1.0.7: Dossier hard kill on terrorists. ANGEL HOSTESS updated.
