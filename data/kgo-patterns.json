@@ -1,10 +1,7 @@
 {
   "version": "1.0.7",
-  "active_poison_slaying": true,
-  "preemptive_perma": true,
-  "field_udp_flood_melt": true,
+  "double_push_protection": true,
   "patterns": [
-    {"id": "active-poison-slay","match": "poison|slay|dns hijack|terrorist injection","reason": "Active poison slaying","perma": true, "preemptive": true},
-    {"id": "field-udp-flood-melt","match": "udp|flood|melt|source kill","reason": "Preemptive perma FIELD UDP FLOOD until melted","global": true, "flood": true}
+    {"id": "double-push-interference","match": "double push|duplicate push|twice|double pushed","reason": "Double push interference kill","perma": true, "preemptive": true}
   ]
 }
