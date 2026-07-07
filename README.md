@@ -1,3 +1,1 @@
-# v0.9.7 LIVE
-
-Kill loop broken. Planet scour active. No hangups.
+Logging: Repeat XYZ only. Historics + latest nice CSV dossier.
