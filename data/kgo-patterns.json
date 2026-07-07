@@ -1,10 +1,10 @@
 {
   "version": "1.0.7",
-  "dns_hijack_kill": true,
-  "combinatronic_historic_retruth": true,
-  "registered_data": true,
+  "active_poison_slaying": true,
+  "preemptive_perma": true,
+  "field_udp_flood_melt": true,
   "patterns": [
-    {"id": "dns-hijack-poison","match": "dns|poison|hijack|fake resolve","reason": "DNS hijack kill source","perma": true, "kill_source": true},
-    {"id": "combinatronic-retruth","match": "MAC|IP|IEEE|Wireshark|NMAP|Wayback|historic|registered","reason": "Combinatronic historic + registered data retruth","global": true}
+    {"id": "active-poison-slay","match": "poison|slay|dns hijack|terrorist injection","reason": "Active poison slaying","perma": true, "preemptive": true},
+    {"id": "field-udp-flood-melt","match": "udp|flood|melt|source kill","reason": "Preemptive perma FIELD UDP FLOOD until melted","global": true, "flood": true}
   ]
 }
