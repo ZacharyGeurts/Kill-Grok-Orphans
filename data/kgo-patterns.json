@@ -1,14 +1,10 @@
 {
   "version": "1.0.7",
-  "angel_hostess": true,
-  "vendor_registration_kill": true,
-  "combinatronic_bsp": true,
-  "mac_ip_truth": true,
-  "fry_refry": true,
-  "no_sleep_max_speed": true,
+  "dns_hijack_kill": true,
+  "combinatronic_historic_retruth": true,
+  "registered_data": true,
   "patterns": [
-    {"id": "terror-hijack","match": "lunatic|terrorist|cache-rip|hijack","reason": "ANGEL KILL","perma": true},
-    {"id": "vendor-truth","match": "vendor|registration","reason": "REGISTRATION KILL + TRUTH"},
-    {"id": "bsp-combi","match": "BSP|MAC|IEEE","reason": "COMBINATRONIC BSP EVERY MAC"}
+    {"id": "dns-hijack-poison","match": "dns|poison|hijack|fake resolve","reason": "DNS hijack kill source","perma": true, "kill_source": true},
+    {"id": "combinatronic-retruth","match": "MAC|IP|IEEE|Wireshark|NMAP|Wayback|historic|registered","reason": "Combinatronic historic + registered data retruth","global": true}
   ]
 }
