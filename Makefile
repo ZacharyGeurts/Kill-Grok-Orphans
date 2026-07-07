@@ -1,4 +1,4 @@
-# Kill Grok Orphans — built with Grok16 (g16) + cross GCC per platform manifest
+# Kill Grok Orphans — built with Grok16 (g16) + cross GCC per platform manifest 
 GROK16_ROOT ?= /home/default/Desktop/SG/Grok16
 G16         ?= $(GROK16_ROOT)/bin/g16
 PREFIX      ?= /usr/local
