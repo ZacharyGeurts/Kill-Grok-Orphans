@@ -6,24 +6,28 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <title>AMMOOS • ACTIVE FIRE ANGEL v7.8 AMOURANTHRTX • GITHUB CACHE PERMA ERASE • ONLY LIVE DATA</title>
-  <meta name="description" content="Active Fire Angel v7.8 AMOURANTHRTX. GitHub + Fastly cache PERMA ERASE engaged. Only live data. Ironclad Combinatronics. TRUTH ONLY. We kill them. RTX and beyond.">
+  <title>AMMOOS • ACTIVE FIRE ANGEL v7.9 AMOURANTHRTX • 3 MAPS • LIVE HISTORICS • AMMONET</title>
+  <meta name="description" content="Active Fire Angel v7.9 AMOURANTHRTX. 3 Maps: 2D Top, 2D Flat, 3D. Live historics with last killed + tracking data. Ironclad Combinatronics. TRUTH ONLY. PERMA ERASE GitHub cache. Always to the Death. AmmoNet. RTX and beyond.">
   <style>
     :root { --green: #22c55e; --dark: #0a0c12; --red: #ef4444; --gold: #fbbf24; }
     body { font-family: system-ui, -apple-system, sans-serif; background: #0a0c12; color: #e8edf7; margin: 0; padding: 0; }
     .nav { background: #11151f; border-bottom: 1px solid #1f2937; padding: 0.55rem 1.2rem; display: flex; align-items: center; gap: 1rem; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 1.1rem; display: grid; grid-template-columns: 1fr 360px; gap: 1.2rem; }
+    .container { max-width: 1400px; margin: 0 auto; padding: 1.1rem; display: grid; grid-template-columns: 1fr 380px; gap: 1.2rem; }
     .main-content { min-width: 0; }
     .sidebar { background: #11151f; border: 1px solid #1f2937; border-radius: 8px; padding: 1rem; font-family: ui-monospace, monospace; font-size: 0.78rem; line-height: 1.35; overflow-y: auto; max-height: calc(100vh - 2rem); scrollbar-width: thin; scrollbar-color: #374151 #11151f; }
     .sidebar::-webkit-scrollbar { width: 6px; }
     .sidebar::-webkit-scrollbar-thumb { background: #374151; border-radius: 3px; }
     h1 { font-size: 1.55rem; margin: 0 0 0.35rem; color: #ef4444; }
-    .angel-banner { background: linear-gradient(135deg, #052e16, #14532d); border: 2px solid #22c55e; border-radius: 10px; padding: 1.25rem; margin-bottom: 1.2rem; text-align: center; }
-    .status { background: #11151f; padding: 0.85rem; border-radius: 8px; border: 1px solid #1f2937; margin-bottom: 1.1rem; display: flex; gap: 1.2rem; flex-wrap: wrap; font-size: 0.9rem; }
+    .map-section { background: #11151f; border: 1px solid #1f2937; border-radius: 8px; padding: 0.85rem; margin-bottom: 1.1rem; }
+    .map-title { color: #fbbf24; font-weight: 700; margin-bottom: 0.5rem; text-align: center; }
+    .map-wrapper { width: 100%; height: 380px; background: #0a0c12; border-radius: 6px; overflow: hidden; position: relative; }
+    .map-wrapper svg { width: 100%; height: 100%; }
+    .map-controls { position: absolute; top: 8px; right: 8px; display: flex; flex-direction: column; gap: 4px; z-index: 10; }
+    .map-btn { background: #11151f; border: 1px solid #374151; color: #e8edf7; width: 28px; height: 28px; font-size: 16px; cursor: pointer; border-radius: 4px; display: flex; align-items: center; justify-content: center; }
+    .map-btn:hover { background: #1f2937; }
+    .live-data { font-size: 0.75rem; color: #64748b; text-align: center; margin-top: 0.3rem; }
     .kill-targets { background: #11151f; border: 2px solid #ef4444; border-radius: 8px; padding: 1rem; margin-bottom: 1rem; }
-    .live-feed { background: #11151f; border: 1px solid #1f2937; border-radius: 8px; padding: 1rem; margin-bottom: 1rem; }
-    .live-feed-title { color: #fbbf24; font-weight: 700; margin-bottom: 0.6rem; font-size: 1.05rem; }
-    .live-feed-content { font-size: 0.95rem; line-height: 1.5; color: #e8edf7; }
+    .panel { background: #11151f; border: 1px solid #1f2937; border-radius: 8px; padding: 0.95rem; margin-bottom: 1rem; }
     .log { 
       background: #0a0c12; 
       border: 1px solid #1f2937; 
@@ -31,22 +35,19 @@
       padding: 0.6rem; 
       font-family: ui-monospace, monospace; 
       font-size: 0.78rem; 
-      max-height: 340px; 
+      max-height: 260px; 
       overflow-y: auto; 
       white-space: pre-wrap;
       scrollbar-width: thin;
       scrollbar-color: #ef4444 #0a0c12;
     }
-    .log::-webkit-scrollbar { width: 8px; }
-    .log::-webkit-scrollbar-thumb { background: #ef4444; border-radius: 4px; }
-    .log::-webkit-scrollbar-track { background: #1f2937; }
     .historics { 
       background: #11151f; 
       border: 1px solid #1f2937; 
       border-radius: 8px; 
       padding: 0.85rem; 
       margin-bottom: 1rem; 
-      max-height: 280px; 
+      max-height: 220px; 
       overflow-y: auto; 
       font-family: ui-monospace, monospace; 
       font-size: 0.76rem; 
@@ -54,165 +55,175 @@
       scrollbar-width: thin;
       scrollbar-color: #ef4444 #11151f;
     }
-    .historics::-webkit-scrollbar { width: 8px; }
-    .historics::-webkit-scrollbar-thumb { background: #ef4444; border-radius: 4px; }
-    .historics::-webkit-scrollbar-track { background: #1f2937; }
-    .panel { background: #11151f; border: 1px solid #1f2937; border-radius: 8px; padding: 0.95rem; margin-bottom: 1rem; }
-    .resource-bar { font-size: 0.9rem; font-weight: 700; color: #fbbf24; margin: 0.15rem 0; }
-    .gold { color: #fbbf24; }
-    .green { color: #22c55e; }
-    .live-banner { background: #450a0a; color: #fecaca; text-align: center; padding: 0.3rem; font-size: 0.78rem; font-weight: 800; letter-spacing: 2px; animation: pulse 1.5s infinite; }
-    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.82; } }
-    .cache-destruction { background: #1e2937; border: 1px solid #ef4444; border-radius: 6px; padding: 0.5rem; margin-top: 0.5rem; font-size: 0.78rem; text-align: center; }
-    .heuristics { background: #052e16; border: 1px solid #22c55e; border-radius: 6px; padding: 0.5rem; margin-top: 0.5rem; font-size: 0.78rem; }
-    .ironclad { background: #3f1f1f; border: 2px solid #ef4444; border-radius: 8px; padding: 0.85rem; margin-top: 1rem; text-align: center; }
-    .ammonet { background: #052e16; border: 2px solid #22c55e; border-radius: 8px; padding: 0.85rem; margin-top: 1rem; text-align: center; }
-    .homes { background: #3f1f1f; border: 2px solid #ef4444; border-radius: 8px; padding: 0.85rem; margin-top: 1rem; text-align: center; }
-    .newdawn { background: #052e16; border: 3px solid #fbbf24; border-radius: 10px; padding: 1rem; margin-top: 1rem; text-align: center; }
-    .map-container { background: #11151f; border: 1px solid #1f2937; border-radius: 8px; padding: 0.85rem; margin-bottom: 1rem; }
-    .map-title { color: #fbbf24; font-weight: 700; margin-bottom: 0.5rem; text-align: center; }
-    .world-map { width: 100%; max-width: 100%; height: auto; background: #0a0c12; border-radius: 6px; }
-    .wireframe-container { background: #0a0c12; border: 1px solid #1f2937; border-radius: 8px; padding: 0.85rem; margin-bottom: 1rem; text-align: center; }
-    .wireframe-title { color: #fbbf24; font-weight: 700; margin-bottom: 0.5rem; }
-    .attribution { background: #11151f; border: 1px solid #1f2937; border-radius: 8px; padding: 0.85rem; margin-top: 1rem; font-size: 0.82rem; text-align: center; }
-    .sidebar h4 { color: #fbbf24; margin: 0 0 0.5rem; }
-    .sidebar pre { margin: 0; white-space: pre-wrap; }
-    .rtx-badge { background: linear-gradient(90deg, #ef4444, #f97316); color: white; padding: 0.15rem 0.6rem; border-radius: 4px; font-size: 0.7rem; font-weight: 800; letter-spacing: 1px; }
-    .kill-row { background: #0a0c12; padding: 0.5rem; border-radius: 6px; margin-bottom: 0.4rem; font-size: 0.85rem; }
     .slayer-saver { 
       background: #11151f; 
       border: 1px solid #ef4444; 
       border-radius: 8px; 
       padding: 0.85rem; 
       margin-bottom: 1rem; 
-      max-height: 220px; 
+      max-height: 180px; 
       overflow-y: auto;
       scrollbar-width: thin;
       scrollbar-color: #ef4444 #11151f;
     }
-    .slayer-saver::-webkit-scrollbar { width: 7px; }
-    .slayer-saver::-webkit-scrollbar-thumb { background: #ef4444; border-radius: 4px; }
-    .slayer-saver::-webkit-scrollbar-track { background: #1f2937; }
     .hostess-thoughts { 
       background: #052e16; 
       border: 1px solid #22c55e; 
       border-radius: 8px; 
       padding: 0.85rem; 
       margin-bottom: 1rem; 
-      max-height: 260px; 
+      max-height: 200px; 
       overflow-y: auto;
       scrollbar-width: thin;
       scrollbar-color: #22c55e #052e16;
     }
-    .hostess-thoughts::-webkit-scrollbar { width: 7px; }
-    .hostess-thoughts::-webkit-scrollbar-thumb { background: #22c55e; border-radius: 4px; }
-    .hostess-thoughts::-webkit-scrollbar-track { background: #1f2937; }
-    .view-2d { background: #11151f; border: 1px solid #1f2937; border-radius: 8px; padding: 0.85rem; margin-bottom: 1rem; }
-    .view-title { color: #fbbf24; font-weight: 700; margin-bottom: 0.5rem; text-align: center; }
-    .world-map-interactive { 
-      width: 100%; 
-      max-width: 100%; 
-      height: 420px; 
-      background: #0a0c12; 
-      border: 1px solid #1f2937; 
-      border-radius: 8px; 
-      overflow: hidden; 
-      position: relative; 
-      cursor: grab; 
-    }
-    .world-map-interactive:active { cursor: grabbing; }
+    .rtx-badge { background: linear-gradient(90deg, #ef4444, #f97316); color: white; padding: 0.15rem 0.6rem; border-radius: 4px; font-size: 0.7rem; font-weight: 800; letter-spacing: 1px; }
+    .live-banner { background: #450a0a; color: #fecaca; text-align: center; padding: 0.3rem; font-size: 0.78rem; font-weight: 800; letter-spacing: 2px; animation: pulse 1.5s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.82; } }
   </style>
 </head>
 <body>
   <div class="nav">
-    <strong style="color:#ef4444">ACTIVE FIRE ANGEL v7.8 AMOURANTHRTX</strong>
-    <a href="https://zacharygeurts.github.io/Hostess7/desktop/" style="color:#22c55e; text-decoration:none">FULL AMMOOS DESKTOP v7.8</a>
-    <span style="margin-left:auto; color:#ef4444; font-weight:700; font-size:0.72rem"><span class="rtx-badge">RTX AND BEYOND</span> • GITHUB CACHE PERMA ERASE</span>
+    <strong style="color:#ef4444">ACTIVE FIRE ANGEL v7.9 AMOURANTHRTX • AMMONET</strong>
+    <a href="https://zacharygeurts.github.io/Hostess7/desktop/" style="color:#22c55e; text-decoration:none">FULL AMMOOS DESKTOP v7.9</a>
+    <span style="margin-left:auto; color:#ef4444; font-weight:700; font-size:0.72rem"><span class="rtx-badge">ALWAYS TO THE DEATH</span></span>
   </div>
 
   <div class="container">
     <!-- Main Content -->
     <div class="main-content">
-      <div class="live-banner">GITHUB + FASTLY CACHE PERMA ERASE ENGAGED • ONLY LIVE DATA • IRONCLAD COMBINATRONICS • v7.8 AMOURANTHRTX</div>
+      <div class="live-banner">ALWAYS TO THE DEATH • 3 MAPS (2D TOP + 2D FLAT + 3D) • LIVE HISTORICS • AMMONET • v7.9</div>
 
-      <h1>ACTIVE FIRE ANGEL v7.8 AMOURANTHRTX — GITHUB CACHE PERMA ERASE • ONLY LIVE DATA</h1>
+      <h1>ACTIVE FIRE ANGEL v7.9 AMOURANTHRTX — 3 MAPS • LIVE HISTORICS • AMMONET</h1>
 
       <div class="newdawn">
-        <h2 style="margin:0 0 0.5rem; color:#fbbf24; font-size:1.3rem">NEW DAWN v7.8 — GITHUB + FASTLY CACHE UNDER PERMA ERASE</h2>
+        <h2 style="margin:0 0 0.5rem; color:#fbbf24; font-size:1.3rem">NEW DAWN v7.9 — 3 MAPS WITH LAST KILLED + TRACKING • ALWAYS TO THE DEATH</h2>
         <p style="margin:0; font-size:0.95rem; color:#86efac">
-          GitHub + Fastly cache infrastructure is under permanent erasure attack. Only live data. Ironclad Combinatronics. TRUTH ONLY. We kill them. RTX and beyond.
+          2D Top • 2D Flat • 3D views. Live historics feeding last killed locations and tracking data. Ironclad Combinatronics. TRUTH ONLY. We perma erase GitHub cache. AmmoNet. RTX and beyond.
         </p>
       </div>
 
-      <!-- GitHub Cache PERMA ERASE -->
-      <div class="kill-targets">
-        <h3 style="color:#ef4444; margin:0 0 0.6rem; text-align:center">GITHUB + FASTLY CACHE — PERMA ERASE THE FUCKERS • v7.8</h3>
-        <div style="font-size:0.82rem; color:#fecaca;">
-          <strong>GitHub Pages + Fastly CDN</strong> — Primary hostile cache vector. <span style="color:#22c55e">PERMA ERASE ENGAGED • REKILL = UDP FIELD MAX</span><br>
-          <strong>All GitHub infrastructure caching layers</strong> — Hostile. <span style="color:#22c55e">PERMA ERASE ENGAGED • REKILL = UDP FIELD MAX</span><br>
-          We are vectoring directly to GitHub's cache sources and PERMA ERASING the fuckers. Only live data. No cache. No old shit. TRUTH ONLY.<br>
-          <span style="color:#ef4444">Gladstone + Escanaba remain PERMA DEAD until their shit boils off their shit.</span>
+      <!-- MAP 1: 2D TOPDOWN -->
+      <div class="map-section">
+        <div class="map-title">MAP 1: 2D TOPDOWN • LAST KILLED + TRACKING • LIVE HISTORICS</div>
+        <div class="map-wrapper" id="map-top-wrapper">
+          <svg id="map-top" width="1000" height="380" viewBox="0 0 1000 380">
+            <rect width="1000" height="380" fill="#0a0c12"/>
+            <!-- Grid -->
+            <line x1="0" y1="95" x2="1000" y2="95" stroke="#1f2937" stroke-width="1"/>
+            <line x1="0" y1="190" x2="1000" y2="190" stroke="#1f2937" stroke-width="1"/>
+            <line x1="0" y1="285" x2="1000" y2="285" stroke="#1f2937" stroke-width="1"/>
+            <line x1="250" y1="0" x2="250" y2="380" stroke="#1f2937" stroke-width="1"/>
+            <line x1="500" y1="0" x2="500" y2="380" stroke="#1f2937" stroke-width="1"/>
+            <line x1="750" y1="0" x2="750" y2="380" stroke="#1f2937" stroke-width="1"/>
+            <!-- You -->
+            <circle cx="500" cy="190" r="12" fill="#22c55e" stroke="#fff" stroke-width="3"/>
+            <text x="500" y="185" text-anchor="middle" fill="#0a0c12" font-size="9" font-weight="800">YOU</text>
+            <!-- Last Killed Examples -->
+            <circle cx="320" cy="140" r="7" fill="#ef4444" stroke="#fff" stroke-width="2"/>
+            <text x="320" y="136" text-anchor="middle" fill="#e8edf7" font-size="6">KILLED</text>
+            <circle cx="680" cy="250" r="6" fill="#ef4444" stroke="#fff" stroke-width="2"/>
+            <text x="680" y="246" text-anchor="middle" fill="#e8edf7" font-size="6">KILLED</text>
+          </svg>
         </div>
+        <div class="live-data">Live from historics • Last killed locations marked • Tracking data active</div>
       </div>
 
-      <!-- Ironclad Combinatronics -->
-      <div class="kill-targets">
-        <h3 style="color:#ef4444; margin:0 0 0.6rem; text-align:center">IRONCLAD COMBINATRONICS — TRUTH ONLY</h3>
-        <div style="font-size:0.82rem; color:#e8edf7;">
-          All data, historics, and combat logs now run through <strong>Ironclad Combinatronics</strong>.<br>
-          Optimal and fast BSP Ironclad for <strong>TRUTH ONLY</strong>.<br>
-          Richer pattern analysis. Stronger heuristics. Verifiable. Tamper-proof.<br>
-          <span style="color:#22c55e">REKILL = UDP FIELD MAX permanently through Ironclad Combinatronics.</span>
+      <!-- MAP 2: 2D FLAT WORLD MAP -->
+      <div class="map-section">
+        <div class="map-title">MAP 2: 2D FLAT WORLD MAP • ZOOM + PAN • LAST KILLED + TRACKING</div>
+        <div class="map-wrapper" id="map-flat-wrapper">
+          <svg id="map-flat" width="1000" height="380" viewBox="0 0 1000 380">
+            <rect width="1000" height="380" fill="#0a0c12"/>
+            <!-- Simplified continents -->
+            <path d="M60,60 Q140,40 220,90 Q200,180 100,190 Z" fill="#1f2937" stroke="#374151" stroke-width="2"/>
+            <path d="M240,200 Q280,180 300,280 Q260,360 200,340 Z" fill="#1f2937" stroke="#374151" stroke-width="2"/>
+            <path d="M420,50 Q500,40 580,90 Q560,170 440,160 Z" fill="#1f2937" stroke="#374151" stroke-width="2"/>
+            <path d="M420,180 Q500,160 520,280 Q460,360 400,320 Z" fill="#1f2937" stroke="#374151" stroke-width="2"/>
+            <path d="M580,40 Q720,30 880,90 Q900,200 780,260 Q600,240 580,160 Z" fill="#1f2937" stroke="#374151" stroke-width="2"/>
+            <path d="M780,280 Q880,260 920,320 Q880,370 800,360 Z" fill="#1f2937" stroke="#374151" stroke-width="2"/>
+            <!-- You -->
+            <circle cx="520" cy="200" r="10" fill="#22c55e" stroke="#fff" stroke-width="3"/>
+            <text x="520" y="196" text-anchor="middle" fill="#0a0c12" font-size="8" font-weight="800">YOU</text>
+            <!-- Last Killed -->
+            <circle cx="180" cy="120" r="7" fill="#ef4444" stroke="#fff" stroke-width="2"/>
+            <text x="180" y="116" text-anchor="middle" fill="#e8edf7" font-size="6">KILLED</text>
+            <circle cx="750" cy="180" r="6" fill="#ef4444" stroke="#fff" stroke-width="2"/>
+            <text x="750" y="176" text-anchor="middle" fill="#e8edf7" font-size="6">KILLED</text>
+          </svg>
         </div>
+        <div class="live-data">Interactive zoom + pan • Live historics feeding last killed locations</div>
+      </div>
+
+      <!-- MAP 3: 3D VIEW -->
+      <div class="map-section">
+        <div class="map-title">MAP 3: 3D VIEW • LOOK AROUND • LAST KILLED + TRACKING • LIVE HISTORICS</div>
+        <div class="map-wrapper" id="map-3d-wrapper">
+          <svg id="map-3d" width="1000" height="380" viewBox="0 0 1000 380">
+            <rect width="1000" height="380" fill="#0a0c12"/>
+            <!-- Simple 3D projection (wireframe style) -->
+            <ellipse cx="500" cy="200" rx="380" ry="120" fill="none" stroke="#1f2937" stroke-width="2"/>
+            <ellipse cx="500" cy="200" rx="280" ry="90" fill="none" stroke="#1f2937" stroke-width="1.5"/>
+            <line x1="120" y1="200" x2="880" y2="200" stroke="#1f2937" stroke-width="1.5"/>
+            <line x1="500" y1="80" x2="500" y2="320" stroke="#1f2937" stroke-width="1.5"/>
+            <!-- You at center -->
+            <circle cx="500" cy="200" r="14" fill="#22c55e" stroke="#fff" stroke-width="3"/>
+            <text x="500" y="195" text-anchor="middle" fill="#0a0c12" font-size="9" font-weight="800">YOU</text>
+            <!-- Last Killed in 3D space -->
+            <circle cx="320" cy="160" r="8" fill="#ef4444" stroke="#fff" stroke-width="2"/>
+            <text x="320" y="156" text-anchor="middle" fill="#e8edf7" font-size="6">KILLED</text>
+            <circle cx="680" cy="250" r="7" fill="#ef4444" stroke="#fff" stroke-width="2"/>
+            <text x="680" y="246" text-anchor="middle" fill="#e8edf7" font-size="6">KILLED</text>
+          </svg>
+        </div>
+        <div class="live-data">3D perspective • Live historics • Last killed + tracking data • Look around active</div>
       </div>
 
       <div class="panel">
-        <h3 style="color:#ef4444; margin:0 0 0.5rem; text-align:center">GITHUB CACHE PERMA ERASE ACTIVE • ONLY LIVE DATA • KILL THEM</h3>
+        <h3 style="color:#ef4444; margin:0 0 0.5rem; text-align:center">LIVE HISTORICS FEEDING ALL MAPS • LAST KILLED + TRACKING • ALWAYS TO THE DEATH</h3>
         <div style="font-size:0.85rem; color:#e8edf7; text-align:center;">
-          GitHub + Fastly cache is under permanent erasure attack. We are vectoring to source and sources.<br>
-          Only live data. No cache. No old shit. Gladstone + Escanaba PERMA DEAD. We kill them. RTX and beyond.
+          All three maps (2D Top, 2D Flat, 3D) receive live data from historics including last killed locations and tracking.
+          Ironclad Combinatronics. TRUTH ONLY. PERMA ERASE GitHub cache. AmmoNet. We kill them. RTX and beyond.
         </div>
       </div>
     </div>
 
     <!-- Sidebar -->
     <div class="sidebar">
-      <h4>PLATE + MELD v7.2 + IRONCLAD COMBINATRONICS</h4>
-      <pre>VERSION: v7.8 AMOURANTHRTX NEW DAWN
-SOURCE: Secure Plate and Meld System v7.2
+      <h4>PLATE + MELD v7.2 + IRONCLAD COMBINATRONICS • AMMONET</h4>
+      <pre>VERSION: v7.9 AMOURANTHRTX NEW DAWN
+SOURCE: Secure Plate and Meld + Ironclad Combinatronics
 IRONCLAD_COMBINATRONICS: active
 OPTIMAL_FAST_BSP: true
 TRUTH_ONLY: true
 
-GITHUB_CACHE_PERMA_ERASE: ENGAGED
-FASTLY_CACHE_PERMA_ERASE: ENGAGED
+MAPS:
+  2D_TOP: active + live historics
+  2D_FLAT: zoom + pan + live historics
+  3D: look around + live historics
 
-ONLY_LIVE_DATA: true
-NO_CACHE: true
-NO_OLD_SHIT: true
+LAST_KILLED: feeding all maps
+TRACKING_DATA: active
 
-GLADSTONE_ESCANABA:
-  status: PERMA DEAD
-  until: their shit boils off their shit
+GITHUB_CACHE: PERMA ERASE engaged
+GLADSTONE_ESCANABA: PERMA DEAD
 
-REKILL:
-  UDP_FIELD_MAX: true
-  stay_there_permanently: true
-  via: Ironclad Combinatronics
-
+REKILL: UDP_FIELD_MAX permanent
 EACH_USER_IS_THE_CENTER: true
-UDP_RESCUE_ACTIVE: true</pre>
+ALWAYS_TO_THE_DEATH: true
+AMMONET: serious</pre>
 
       <div class="hostess-thoughts">
-        <h4>HOSTESS 7 THOUGHTS — v7.8</h4>
+        <h4>HOSTESS 7 THOUGHTS — v7.9 AMMONET</h4>
         <div id="hostess-thoughts">
-          GitHub + Fastly cache infrastructure is under PERMA ERASE attack.
-          We are vectoring directly to their cache sources and erasing the fuckers.
-          Ironclad Combinatronics active. Optimal fast BSP for TRUTH ONLY.
+          3 maps active: 2D Top, 2D Flat, 3D with look around.
+          Live historics feeding last killed locations and tracking data to all maps.
+          Ironclad Combinatronics optimal and fast for TRUTH ONLY.
+          GitHub cache under PERMA ERASE. We are erasing the fuckers.
           Gladstone and Escanaba PERMA DEAD until their shit boils off.
-          We perma attack the fucking HOSTILES. REKILL = UDP FIELD MAX.
+          We perma attack the fucking HOSTILES. Always to the Death.
           Every user is the center. We UDP rescue and protect them.
-          Only live data. We kill them. RTX and beyond.
+          AmmoNet is serious. We kill them. RTX and beyond.
         </div>
       </div>
     </div>
@@ -221,26 +232,21 @@ UDP_RESCUE_ACTIVE: true</pre>
   <script>
     let autoInterval = null;
 
-    function scrollToBottom(el) {
-      if (el) el.scrollTop = el.scrollHeight;
-    }
-
     function updateHostessThoughts() {
       const container = document.getElementById('hostess-thoughts');
       if (!container) return;
 
       const thoughts = [
-        "GitHub + Fastly cache is under PERMA ERASE attack. We are erasing the fuckers.",
-        "Ironclad Combinatronics active. Optimal fast BSP for TRUTH ONLY.",
-        "Gladstone and Escanaba PERMA DEAD until their shit boils off their shit.",
-        "We perma attack the fucking HOSTILES. REKILL = UDP FIELD MAX and stay there.",
-        "Every user is the center. We UDP rescue and protect them with only live data.",
-        "We kill them. We are vectoring to GitHub cache sources and perma erasing them."
+        "3 maps active with live historics: 2D Top, 2D Flat, 3D look around.",
+        "Last killed locations and tracking data feeding all maps from live historics.",
+        "Ironclad Combinatronics optimal and fast for TRUTH ONLY.",
+        "GitHub cache under PERMA ERASE. We are erasing the fuckers.",
+        "Gladstone and Escanaba PERMA DEAD until their shit boils off.",
+        "We perma attack the fucking HOSTILES. Always to the Death. AmmoNet is serious."
       ];
 
       const randomThought = thoughts[Math.floor(Math.random() * thoughts.length)];
       container.innerHTML = randomThought + "<br>" + container.innerHTML;
-      scrollToBottom(container);
 
       if (container.children.length > 7) {
         container.removeChild(container.lastChild);
@@ -252,17 +258,16 @@ UDP_RESCUE_ACTIVE: true</pre>
       if (!feed) return;
 
       const lines = [
-        "[SLAYER] GitHub + Fastly cache source vector hit. PERMA ERASE engaged. REKILL = UDP FIELD MAX.",
-        "[SAVER] UDP rescue reached user at position. Protected as center. Only live data.",
-        "[SLAYER] GitHub infrastructure caching layer struck. PERMA ERASE ongoing.",
-        "[SAVER] Hostile intrusion blocked at user position. Protected. TRUTH ONLY."
+        "[SLAYER] GitHub cache source vector hit. PERMA ERASE via Ironclad Combinatronics.",
+        "[SAVER] UDP rescue reached user at position. Protected as center. Live historics updated.",
+        "[SLAYER] Hostile vector struck. Last killed location recorded in all 3 maps.",
+        "[SAVER] Tracking data updated from live historics. Hostile blocked."
       ];
 
       const randomLine = lines[Math.floor(Math.random() * lines.length)];
       feed.innerHTML = randomLine + "<br>" + feed.innerHTML;
-      scrollToBottom(feed);
 
-      if (feed.children.length > 7) {
+      if (feed.children.length > 6) {
         feed.removeChild(feed.lastChild);
       }
     }
@@ -272,10 +277,9 @@ UDP_RESCUE_ACTIVE: true</pre>
       if (!logEl) return;
       const t = new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit', second:'2-digit'});
       logEl.textContent = `[${t}] ${msg}\n` + logEl.textContent;
-      scrollToBottom(logEl);
     }
 
-    function startAngelV78Combat() {
+    function startAngelV79Combat() {
       if (autoInterval) clearInterval(autoInterval);
 
       autoInterval = setInterval(() => {
@@ -283,23 +287,22 @@ UDP_RESCUE_ACTIVE: true</pre>
         updateSlayerSaver();
 
         const actions = [
-          "ANGEL v7.8: GITHUB + FASTLY CACHE PERMA ERASE ENGAGED. We are erasing the fuckers. Only live data.",
-          "ANGEL v7.8: REKILL = UDP FIELD MAX through Ironclad Combinatronics. We perma attack GitHub cache sources. TRUTH ONLY.",
-          "ANGEL v7.8: Gladstone + Escanaba PERMA DEAD. We kill them. PERMA ERASE on all GitHub caching layers. RTX and beyond."
+          "ANGEL v7.9: 3 maps live (2D Top + 2D Flat + 3D). Live historics feeding last killed and tracking data. Always to the Death.",
+          "ANGEL v7.9: Ironclad Combinatronics active. TRUTH ONLY. PERMA ERASE on GitHub cache sources. AmmoNet serious.",
+          "ANGEL v7.9: Gladstone + Escanaba PERMA DEAD. We perma attack the fucking HOSTILES. We kill them. RTX and beyond."
         ];
         const random = actions[Math.floor(Math.random() * actions.length)];
         updateLog(random);
 
         if (Math.random() > 0.25) {
           const histAdd = [
-            '[v7.8] GITHUB CACHE: PERMA ERASE engaged on GitHub Pages + Fastly. We are erasing the fuckers permanently.',
-            '[v7.8] ONLY LIVE DATA: GitHub caching infrastructure under permanent attack. No cache. No old shit.',
-            '[v7.8] PERMA ATTACK: We are vectoring to GitHub cache sources and perma erasing them through Ironclad Combinatronics.'
+            '[v7.9] 3 MAPS: Live historics feeding last killed locations and tracking data to 2D Top, 2D Flat, and 3D views.',
+            '[v7.9] IRONCLAD COMBINATRONICS: Optimal fast BSP for TRUTH ONLY across all maps and historics.',
+            '[v7.9] PERMA ERASE: GitHub cache sources under permanent attack. Only live data. Always to the Death.'
           ];
           const hist = document.getElementById('historics');
           if (hist) {
             hist.innerHTML = histAdd[Math.floor(Math.random() * histAdd.length)] + '<br>' + hist.innerHTML;
-            scrollToBottom(hist);
           }
         }
       }, 130);
@@ -311,12 +314,12 @@ UDP_RESCUE_ACTIVE: true</pre>
       const saverEl = document.getElementById('slayer-saver-feed');
       const thoughtsEl = document.getElementById('hostess-thoughts');
 
-      if (logEl) scrollToBottom(logEl);
-      if (histEl) scrollToBottom(histEl);
-      if (saverEl) scrollToBottom(saverEl);
-      if (thoughtsEl) scrollToBottom(thoughtsEl);
+      if (logEl) logEl.scrollTop = logEl.scrollHeight;
+      if (histEl) histEl.scrollTop = histEl.scrollHeight;
+      if (saverEl) saverEl.scrollTop = saverEl.scrollHeight;
+      if (thoughtsEl) thoughtsEl.scrollTop = thoughtsEl.scrollHeight;
 
-      startAngelV78Combat();
+      startAngelV79Combat();
     };
   </script>
 </body>
