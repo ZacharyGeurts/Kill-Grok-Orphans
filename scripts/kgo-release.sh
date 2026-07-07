@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
-set -euo pipefail
-VERSION="0.9.7"
-# ... full release with hash verify ... gh release create ...
+#!/bin/bash
+VERSION=1.0.7
+gh release create v1.0.7 --latest --notes "New latest deployed. ANGEL win."
