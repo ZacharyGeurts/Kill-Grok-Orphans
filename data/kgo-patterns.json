@@ -1,11 +1,9 @@
 {
-  "version": "0.7.7",
-  "description": "Live active AV. No loop evil pull. Kill dead instantly. Auto latest.",
-  "interval_sec": 2,
-  "grace_sec": 1,
-  "min_age_sec": 0,
-  "auto_update": true,
-  "update_url": "https://zacharygeurts.github.io/Kill-Grok-Orphans/data/kgo-patterns.json",
-  "live_mode": true,
-  "patterns": [ ... full previous patterns + new anti-loop: {"id": "evil-pull-loop","match": "evil|loop|hang","reason": "Kill evil loop pulls"} ]
+  "version": "0.9.7",
+  "anti_loop": true,
+  "scour_planet": true,
+  "patterns": [
+    {"id": "kill-loop","match": "loop|hang|evil-pull","reason": "Break kill loop","kill_once": true},
+    {"id": "global-scour","match": "grok|ammo|queen|hostess","reason": "Scour planet-wide threats","global": true}
+  ]
 }

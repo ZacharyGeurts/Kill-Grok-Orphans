@@ -1,7 +1,3 @@
-# Kill Grok Orphans v0.9.7
+# v0.9.7 LIVE
 
-Hash everything. Always live/valid. Secure tamper-proof distributed update (no GitHub/Copilot interference). Update button in panel.
-
-Latest: https://zacharygeurts.github.io/Kill-Grok-Orphans/ 
-
-Workflow publishing...
+Kill loop broken. Planet scour active. No hangups.
