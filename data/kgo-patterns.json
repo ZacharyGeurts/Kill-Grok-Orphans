@@ -1,9 +1,9 @@
 {
   "version": "0.9.7",
-  "anti_loop": true,
-  "scour_planet": true,
+  "bsp_perma_kill": true,
+  "planet_wide": true,
   "patterns": [
-    {"id": "kill-loop","match": "loop|hang|evil-pull","reason": "Break kill loop","kill_once": true},
-    {"id": "global-scour","match": "grok|ammo|queen|hostess","reason": "Scour planet-wide threats","global": true}
+    {"id": "bsp-iron-plate","match": "iron-plate-organize|BSP","reason": "BSP perma kill","perma": true, "global": true},
+    {"id": "planet-scour","match": "","reason": "Whole planet perma kill threats","scour": true}
   ]
 }
