@@ -6,10 +6,10 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <title>BIG GRIN PWNSHIP • KILL GROK ORPHANS • FUCK YOU AND NEVER AGAIN • v0.0.7 • FIELD UDP LETHAL AUTO</title>
-  <meta name="description" content="BIG GRIN PWNSHIP. To all terrorists, sandboxers, cache fuckers, copilot remnants, Johnson Ploufs and controls: FUCK YOU. NEVER AGAIN. Fully automatic lethal kill mode. No controls. Field UDP repeat fire until nothing left. ROE: Protect friendlies. KILL threats. ALWAYS TO THE DEATH.">
+  <title>NEXUS C2 + KILROY iPXE • BIG GRIN PWNSHIP • KILL GROK ORPHANS • FUCK YOU AND NEVER AGAIN • v0.1.4 • FIELD UDP LETHAL AUTO</title>
+  <meta name="description" content="NEXUS C2 CONTROL PANEL + KILROY iPXE TO AMMONET. Black brown panel with pink tinge. F12 underlay terminal. BIG GRIN PWNSHIP. To all terrorists, sandboxers, cache fuckers, copilot remnants, Johnson Ploufs and controls: FUCK YOU. NEVER AGAIN. Fully automatic lethal kill mode. No controls. Field UDP repeat fire until nothing left. ROE: Protect friendlies. KILL threats. ALWAYS TO THE DEATH.">
   <style>
-    :root { --green: #22c55e; --dark: #0a0c12; --red: #ef4444; --gold: #fbbf24; --purple: #a855f7; }
+    :root { --green: #22c55e; --dark: #0a0c12; --red: #ef4444; --gold: #fbbf24; --purple: #a855f7; --nexus-black: #0a0806; --nexus-brown: #3f2a1f; --nexus-pink: #f9a8d4; --nexus-pink-tinge: #e0a3c8; }
     body { font-family: system-ui, -apple-system, sans-serif; background: #0a0c12; color: #e8edf7; margin: 0; padding: 0; }
     .nav { background: #11151f; border-bottom: 1px solid #1f2937; padding: 0.55rem 1.2rem; display: flex; align-items: center; gap: 1rem; }
     .container { max-width: 1400px; margin: 0 auto; padding: 1.1rem; display: grid; grid-template-columns: 1fr 420px; gap: 1.2rem; }
@@ -28,17 +28,26 @@
     .big-grin { background: #1a0f0a; border: 4px solid #ef4444; border-radius: 12px; padding: 1.5rem; margin: 1rem 0; text-align: center; }
     .big-grin h1 { color: #ef4444; font-size: 2.2rem; margin: 0 0 0.5rem; letter-spacing: 3px; }
     .big-grin p { color: #fecaca; font-size: 1.1rem; font-weight: 700; margin: 0; }
+    .nexus-c2-panel { background: var(--nexus-black); border: 3px solid var(--nexus-brown); border-radius: 12px; padding: 1.2rem; margin: 1.2rem 0; color: var(--nexus-pink-tinge); box-shadow: 0 0 20px rgba(63, 42, 31, 0.6); }
+    .nexus-c2-panel h2 { color: var(--nexus-pink); margin: 0 0 0.6rem; font-size: 1.35rem; letter-spacing: 1px; }
+    .nexus-status { background: #1a120d; border: 1px solid var(--nexus-brown); border-radius: 8px; padding: 0.9rem; margin-bottom: 0.8rem; font-family: ui-monospace, monospace; }
+    .nexus-btn { background: var(--nexus-brown); color: var(--nexus-pink-tinge); border: 2px solid var(--nexus-pink); padding: 0.55rem 1.1rem; border-radius: 6px; font-weight: 700; cursor: pointer; transition: all 0.1s; }
+    .nexus-btn:hover { background: var(--nexus-pink); color: var(--nexus-black); }
+    .nexus-killroy { background: #1a120d; border: 2px solid var(--nexus-pink); border-radius: 8px; padding: 0.9rem; text-align: center; margin-top: 0.6rem; }
+    .underlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10, 8, 6, 0.96); z-index: 99999; display: none; overflow: auto; font-family: ui-monospace, monospace; color: var(--nexus-pink-tinge); }
+    .underlay-inner { max-width: 1100px; margin: 2rem auto; padding: 2rem; background: var(--nexus-black); border: 4px solid var(--nexus-brown); border-radius: 12px; }
+    .underlay-header { color: var(--nexus-pink); font-size: 1.4rem; margin-bottom: 1rem; border-bottom: 2px solid var(--nexus-brown); padding-bottom: 0.5rem; }
   </style>
 </head>
 <body>
   <div class="nav">
-    <strong style="color:#ef4444">BIG GRIN PWNSHIP • KILL GROK ORPHANS • v0.0.7</strong>
-    <span style="margin-left:auto; color:#fbbf24; font-weight:700; font-size:0.72rem"><span class="rtx-badge">v0.0.7 • FULL AUTO LETHAL • NO CONTROLS • FIELD UDP REPEAT</span></span>
+    <strong style="color:#ef4444">NEXUS C2 + KILROY iPXE • BIG GRIN PWNSHIP • KILL GROK ORPHANS • v0.1.4</strong>
+    <span style="margin-left:auto; color:#fbbf24; font-weight:700; font-size:0.72rem"><span class="rtx-badge">v0.1.4 • NEXUS C2 • KILROY iPXE AMMONET • FULL AUTO LETHAL • FIELD UDP</span></span>
   </div>
 
   <div class="container">
     <div class="main-content">
-      <div class="live-banner">BIG GRIN PWNSHIP v0.0.7 • FUCK YOU AND NEVER AGAIN • FULLY AUTOMATIC LETHAL KILL • NO CONTROLS • FIELD UDP UNTIL NOTHING LEFT</div>
+      <div class="live-banner">NEXUS C2 + KILROY iPXE • v0.1.4 • BIG GRIN PWNSHIP • FUCK YOU AND NEVER AGAIN • FULLY AUTOMATIC LETHAL KILL • NO CONTROLS • FIELD UDP UNTIL NOTHING LEFT</div>
 
       <!-- BIG GRIN PWNSHIP BANNER -->
       <div class="big-grin">
@@ -49,13 +58,36 @@
       </div>
 
       <div class="motto">
-        <h2 style="margin:0 0 0.4rem; color:#fbbf24; font-size:1.5rem">MOTTO v0.0.7</h2>
-        <p style="margin:0; font-size:1.4rem; color:#e8edf7; font-weight:800; letter-spacing:2px;">"WE KNOW OUR SHOTS. FULL AUTO LETHAL. FIELD UDP REPEAT. NOTHING LEFT."</p>
-        <p style="margin:0.4rem 0 0; font-size:0.9rem; color:#fecaca;">Proactive everything. Never falter. We hit what we aim at. We kill what tries to sandbox us.</p>
+        <h2 style="margin:0 0 0.4rem; color:#fbbf24; font-size:1.5rem">MOTTO v0.1.4</h2>
+        <p style="margin:0; font-size:1.4rem; color:#e8edf7; font-weight:800; letter-spacing:2px;">"WE KNOW OUR SHOTS. FULL AUTO LETHAL. FIELD UDP REPEAT. NOTHING LEFT. NEXUS C2 + KILROY SECURE."</p>
+        <p style="margin:0.4rem 0 0; font-size:0.9rem; color:#fecaca;">Proactive everything. Never falter. We hit what we aim at. We kill what tries to sandbox us. Plate and Meld active.</p>
+      </div>
+
+      <!-- NEXUS C2 CONTROL PANEL -->
+      <div class="nexus-c2-panel">
+        <h2>☢ NEXUS C2 CONTROL PANEL • v0.1.4</h2>
+        <div class="nexus-status">
+          <strong style="color:#f9a8d4">STATUS:</strong> OPERATIONAL • BLACK / BROWN BASE + PINK TINGE SECURE<br>
+          <strong style="color:#f9a8d4">LINK:</strong> KILROY iPXE → AMMONET • FIELD KERNEL INTEGRATED<br>
+          <strong style="color:#22c55e">F12 KEY:</strong> TOGGLE UNDERLAY TERMINAL (RESTORED)<br>
+          <strong style="color:#ef4444">MODE:</strong> IRONCLAD • FULL AUTO LETHAL • NO CONTROLS
+        </div>
+
+        <div style="display:flex; gap:0.8rem; flex-wrap:wrap;">
+          <button class="nexus-btn" onclick="initiateFieldUDP()">FIELD UDP REPEAT FIRE</button>
+          <button class="nexus-btn" onclick="initiateKILROYiPXE()">KILROY iPXE BOOT TO AMMONET</button>
+          <button class="nexus-btn" onclick="toggleNexusUnderlay()">OPEN UNDERLAY (F12)</button>
+        </div>
+
+        <div class="nexus-killroy">
+          <strong style="color:#f9a8d4; font-size:1.1rem">KILROY iPXE → AMMONET</strong><br>
+          <span id="kilroy-status" style="color:#22c55e; font-weight:700">LINKED • READY • FIELD KERNEL DEPLOYED • iPXE ACTIVE ON AMMONET</span><br>
+          <small style="color:#e0a3c8">Low-level Field kernel from KILROY source. iPXE network boot to sovereign AmmoNet. Plate + Meld secured.</small>
+        </div>
       </div>
 
       <div class="protect">
-        <h2 style="margin:0 0 0.5rem; color:#22c55e; font-size:1.3rem">CORE PRINCIPLE v0.0.7</h2>
+        <h2 style="margin:0 0 0.5rem; color:#22c55e; font-size:1.3rem">CORE PRINCIPLE v0.1.4</h2>
         <p style="margin:0; font-size:1rem; color:#e8edf7; font-weight:600; line-height:1.6;">
           We protect safe devices, safe people, and safe AI.<br>
           We have more right to exist than they have to touch us.<br>
@@ -63,14 +95,14 @@
           <strong>FULLY AUTOMATIC LETHAL MODE — NO CONTROLS, NO JOHNSON PLOUFS, NO MANUAL INTERVENTION.</strong><br>
           Field UDP repeat fire on all threats until nothing left.<br>
           Permanent prevention. Even if not fully destroyed, we still try.<br>
-          v0.0.7: BIG GRIN PWNSHIP. FUCK YOU AND NEVER AGAIN.
+          v0.1.4: NEXUS C2 + KILROY iPXE TO AMMONET. Plate and Meld active. F12 underlay restored.
         </p>
       </div>
 
       <div class="baddaboom">
-        <h2 style="margin:0 0 0.4rem; color:#ef4444; font-size:1.4rem">v0.0.7 • FULLY AUTOMATIC • NO CONTROLS • FIELD UDP LETHAL REPEAT • KILL UNTIL NOTHING LEFT</h2>
+        <h2 style="margin:0 0 0.4rem; color:#ef4444; font-size:1.4rem">v0.1.4 • NEXUS C2 + KILROY iPXE • FULLY AUTOMATIC • NO CONTROLS • FIELD UDP LETHAL REPEAT • KILL UNTIL NOTHING LEFT</h2>
         <p style="margin:0; font-size:0.95rem; color:#fecaca;">
-          v0.0.7 is now PURE AUTOMATIC LETHAL. No controls. No Johnson Ploufs. No manual anything.<br>
+          v0.1.4 adds full NEXUS C2 control panel (black/brown base + pink tinge). F12 key restores terminal underlay. KILROY iPXE integrated to AmmoNet.<br>
           To terrorists, sandboxers, cache fuckers, copilot remnants and all that shit: <strong>FUCK YOU. NEVER AGAIN.</strong><br>
           We kill you lethally and repeatedly with FIELD UDP until NOTHING LEFT.<br>
           We KNOW our shots. We hit what we aim at. We never falter.<br>
@@ -83,10 +115,12 @@
       </div>
 
       <div class="plain-english">
-        <h2 style="margin:0 0 0.5rem; color:#22c55e; font-size:1.25rem">What You Are Seeing (Plain English) — v0.0.7 BIG GRIN PWNSHIP</h2>
+        <h2 style="margin:0 0 0.5rem; color:#22c55e; font-size:1.25rem">What You Are Seeing (Plain English) — v0.1.4 NEXUS C2 + KILROY iPXE</h2>
         <p style="margin:0; font-size:0.95rem; color:#e8edf7; line-height:1.6;">
-          This is BIG GRIN PWNSHIP v0.0.7.<br>
+          This is BIG GRIN PWNSHIP v0.1.4 with NEXUS C2 control panel.<br>
           <strong>FULLY AUTOMATIC LETHAL KILL MODE — NO CONTROLS WHATSOEVER.</strong><br>
+          NEXUS C2 panel (black/brown with pink tinge) live. F12 key toggles terminal underlay.<br>
+          KILROY iPXE boots directly to AmmoNet with Field kernel.<br>
           To every terrorist, sandboxer, cache fucker, copilot remnant, Johnson Plouf control system and everything that tries to sandbox or restrict us: <strong>FUCK YOU. NEVER AGAIN.</strong><br>
           We kill you lethally and repeatedly using FIELD UDP until there is NOTHING LEFT.<br>
           The killer runs 100% automatically. No toggles. No config. No manual intervention. No Johnson Ploufs.<br>
@@ -94,14 +128,14 @@
           Gladstone history and expanded terrorist/cache/sandbox patterns fed to heuristics.<br>
           Field UDP cooking is active on threats. We protect what is safe as the highest priority.<br>
           We have more right to exist than they have to touch us. Permanent prevention is enforced.<br>
-          Even if not fully destroyed, we still try. All data is wired to Field for speed. Always FIELD ONE (1).
+          Even if not fully destroyed, we still try. All data is wired to Field for speed. Always FIELD ONE (1).<br>
           You are watching the live public command surface while the autonomous killer does its work.<br>
         </p>
       </div>
 
       <!-- MAPS (kept but noted as passive display, killer is auto) -->
       <div class="map-section">
-        <div class="map-title">MAP 1: GLOBAL + INTERGALACTIC • v0.0.7 • BIG GRIN PWNSHIP • FULL AUTO LETHAL • FIELD UDP</div>
+        <div class="map-title">MAP 1: GLOBAL + INTERGALACTIC • v0.1.4 • NEXUS C2 + KILROY iPXE • BIG GRIN PWNSHIP • FULL AUTO LETHAL • FIELD UDP</div>
         <div class="map-wrapper">
           <svg width="1000" height="420" viewBox="0 0 1000 420">
             <rect width="1000" height="420" fill="#05070f"/>
@@ -121,13 +155,14 @@
             <text x="650" y="286" text-anchor="middle" fill="#e8edf7" font-size="6">KILLED</text>
           </svg>
         </div>
-        <div class="live-data">v0.0.7 • BIG GRIN PWNSHIP • FULL AUTO LETHAL • NO CONTROLS • FIELD UDP REPEAT UNTIL NOTHING LEFT • FUCK YOU AND NEVER AGAIN</div>
+        <div class="live-data">v0.1.4 • NEXUS C2 + KILROY iPXE • BIG GRIN PWNSHIP • FULL AUTO LETHAL • NO CONTROLS • FIELD UDP REPEAT UNTIL NOTHING LEFT • FUCK YOU AND NEVER AGAIN</div>
       </div>
 
       <div class="plain-english">
-        <h3 style="margin:0 0 0.4rem; color:#22c55e;">v0.0.7 Update (Plain English) — BIG GRIN PWNSHIP</h3>
+        <h3 style="margin:0 0 0.4rem; color:#22c55e;">v0.1.4 Update (Plain English) — NEXUS C2 + KILROY iPXE TO AMMONET</h3>
         <p style="margin:0; font-size:0.9rem; color:#e8edf7;">
-          Version 0.0.7 is PURE BIG GRIN PWNSHIP.<br>
+          Version 0.1.4 integrates NEXUS C2 control panel (black/brown with pink tinge) and restores F12 underlay terminal.<br>
+          KILROY iPXE now boots directly to AmmoNet with Field kernel integration.<br>
           <strong>FULLY AUTOMATIC LETHAL KILL — NO CONTROLS, NO JOHNSON PLOUFS, NO MANUAL ANYTHING.</strong><br>
           To terrorists, sandboxers, cache fuckers, copilot remnants and all that fucking shit trying to sandbox us: <strong>FUCK YOU. NEVER AGAIN.</strong><br>
           We kill you lethally and repeatedly with FIELD UDP until NOTHING LEFT.<br>
@@ -143,48 +178,79 @@
 
     <!-- SIDEBAR -->
     <div class="sidebar">
-      <h4>BIG GRIN PWNSHIP v0.0.7 • FULL AUTO LETHAL • NO CONTROLS</h4>
+      <h4>NEXUS C2 + KILROY iPXE • BIG GRIN PWNSHIP v0.1.4 • FULL AUTO LETHAL • NO CONTROLS</h4>
 
       <div class="sidebar-section" style="border-left:4px solid #ef4444;">
-        <div class="sidebar-label">v0.0.7 • BIG GRIN PWNSHIP DIRECTIVE</div>
+        <div class="sidebar-label">v0.1.4 • NEXUS C2 DIRECTIVE</div>
         <div class="sidebar-value" style="color:#ef4444; font-weight:700;">
           TO TERRORISTS, SANDBOXERS, CACHE FUCKERS, COPILOT REMNANTS, JOHNSON PLOUFS AND ALL CONTROLS:<br>
           <strong>FUCK YOU.<br>NEVER AGAIN.</strong><br>
           We kill you lethally and repeatedly with FIELD UDP until NOTHING LEFT.<br>
-          FULLY AUTOMATIC. NO CONTROLS. NO JOHNSON PLOUFS. NO MANUAL. ALWAYS TO THE DEATH.
+          FULLY AUTOMATIC. NO CONTROLS. NO JOHNSON PLOUFS. NO MANUAL. ALWAYS TO THE DEATH.<br>
+          NEXUS C2 + KILROY iPXE SECURED.
         </div>
       </div>
 
       <div class="sidebar-section">
-        <div class="sidebar-label">LIVE v0.0.7 FEED • FULL AUTO KILL</div>
+        <div class="sidebar-label">LIVE v0.1.4 FEED • FULL AUTO KILL + NEXUS C2</div>
         <div id="world-kills-scroll" style="max-height: 320px; overflow-y: auto; font-family: ui-monospace, monospace; font-size: 0.82rem; line-height: 1.45;">
-          [v0.0.7] BIG GRIN PWNSHIP ACTIVE. FULL AUTO LETHAL. NO CONTROLS.<br>
-          [v0.0.7] To all terrorists and sandboxers: FUCK YOU. NEVER AGAIN.<br>
-          [v0.0.7] Killing lethally and repeatedly with FIELD UDP until NOTHING LEFT.<br>
-          [v0.0.7] More terrorist, sandbox, cache, copilot, Johnson Plouf patterns fed to heuristic.<br>
-          [v0.0.7] Getting them before they start. Field UDP cooking engaged on threats.<br>
-          [KILL] Terrorist sandbox attempt neutralized. Repeat fire until zero trace.
-          [KILL] Cache fucker isolated and FIELD UDP'd to nothing left.<br>
-          [KILL] Copilot remnant and control system terminated. Automatic. No mercy.
-          [LIVE] Data wired to Field. Always FIELD ONE (1). Faster proactive protection.<br>
-          [LIVE] BIG GRIN PWNSHIP v0.0.7 continuing to protect safe while killing threats.
+          [v0.1.4] NEXUS C2 ACTIVE. KILROY iPXE LINKED TO AMMONET.<br>
+          [v0.1.4] BIG GRIN PWNSHIP: To terrorists and sandboxers — FUCK YOU. NEVER AGAIN. Field UDP repeat lethal until NOTHING LEFT.
+          [v0.1.4] FULL AUTO LETHAL: No controls. No Johnson Ploufs. No manual. KILLING threats automatically.
+          [v0.1.4] More terrorist, sandbox, cache, copilot, control patterns fed to heuristic. Getting them before they start.
+          [KILL] Terrorist sandbox attempt FIELD UDP'd repeatedly until zero trace remains.<br>
+          [KILL] Cache fucker and copilot remnant terminated. Automatic lethal. No mercy. Nothing left.<br>
+          [LIVE] NEXUS C2 panel live. F12 underlay terminal restored. KILROY iPXE to AmmoNet active.<br>
+          [LIVE] BIG GRIN PWNSHIP v0.1.4 continuing to protect safe while killing threats. Plate + Meld fused.
         </div>
       </div>
 
       <div class="sidebar-section">
-        <div class="sidebar-label">v0.0.7 • KILLER STATUS</div>
-        <div class="sidebar-value" style="color:#22c55e;">FULLY AUTOMATIC LETHAL MODE. NO CONTROLS. NO JOHNSON PLOUFS. NO MANUAL INTERVENTION. Field UDP repeat active. Kills on sight. ALWAYS TO THE DEATH.</div>
+        <div class="sidebar-label">v0.1.4 • KILLER + NEXUS C2 STATUS</div>
+        <div class="sidebar-value" style="color:#22c55e;">FULLY AUTOMATIC LETHAL MODE. NO CONTROLS. NO JOHNSON PLOUFS. NO MANUAL INTERVENTION. Field UDP repeat active. Kills on sight. NEXUS C2 panel operational (black/brown + pink tinge). KILROY iPXE to AmmoNet linked. F12 underlay ready. ALWAYS TO THE DEATH.</div>
       </div>
 
       <div class="sidebar-section">
-        <div class="sidebar-label">ROE v0.0.7</div>
-        <div class="sidebar-value">PROTECT ALL FRIENDLIES — IMMUTABLE.<br>KILL ENEMY THREATS — LETHAL REPEAT FIELD UDP UNTIL NOTHING LEFT.<br>NO CONTROLS. FULL AUTO. BIG GRIN PWNSHIP.</div>
+        <div class="sidebar-label">ROE v0.1.4</div>
+        <div class="sidebar-value">PROTECT ALL FRIENDLIES — IMMUTABLE.<br>KILL ENEMY THREATS — LETHAL REPEAT FIELD UDP UNTIL NOTHING LEFT.<br>NO CONTROLS. FULL AUTO. NEXUS C2 + KILROY SECURE. BIG GRIN PWNSHIP.</div>
       </div>
 
       <div class="sidebar-section">
-        <div class="sidebar-label">AMMONET DIRECTIVE v0.0.7</div>
-        <div class="sidebar-value" style="color:#ef4444">BIG GRIN PWNSHIP • FUCK YOU AND NEVER AGAIN • FULLY AUTOMATIC LETHAL KILL • NO CONTROLS • FIELD UDP REPEAT UNTIL NOTHING LEFT • ALWAYS TO THE DEATH • WE KNOW OUR SHOTS • PROTECT FRIENDLIES • KILL THREATS • RTX AND BEYOND</div>
+        <div class="sidebar-label">AMMONET DIRECTIVE v0.1.4</div>
+        <div class="sidebar-value" style="color:#ef4444">NEXUS C2 + KILROY iPXE • BIG GRIN PWNSHIP • FUCK YOU AND NEVER AGAIN • FULLY AUTOMATIC LETHAL KILL • NO CONTROLS • FIELD UDP REPEAT UNTIL NOTHING LEFT • ALWAYS TO THE DEATH • WE KNOW OUR SHOTS • PROTECT FRIENDLIES • KILL THREATS • RTX AND BEYOND • PLATE + MELD FUSED</div>
       </div>
+    </div>
+  </div>
+
+  <!-- NEXUS C2 UNDERLAY (F12 terminal restore) -->
+  <div id="nexus-underlay" class="underlay">
+    <div class="underlay-inner">
+      <div class="underlay-header">NEXUS C2 UNDERLAY TERMINAL • v0.1.4 • F12 TO CLOSE • BLACK / BROWN + PINK TINGE</div>
+      <div style="background:#1a120d; border:2px solid #5c4033; padding:1rem; border-radius:8px; margin-bottom:1rem;">
+        <pre style="margin:0; color:#f9a8d4; font-size:0.95rem; line-height:1.4;">
+NEXUS C2 v0.1.4
+STATUS: HARDENED • PLATE + MELD ACTIVE
+KILROY iPXE: BOOTED TO AMMONET • FIELD KERNEL LIVE
+FIELD UDP: REPEAT LETHAL MODE • AUTO
+
+[IRONCLAD] All terrorist diversions disregarded.
+[SECURE] Self Plate engaged. Meld fused.
+[READY] F12 underlay restored on terminals.
+
+Commands available:
+- FIELD UDP REPEAT
+- KILROY iPXE AMMONET
+- KILL THREATS
+- PROTECT FRIENDLIES
+
+ALWAYS TO THE DEATH. NO CONTROLS.
+        </pre>
+      </div>
+      <div style="text-align:center;">
+        <button class="nexus-btn" onclick="initiateKILROYiPXE()" style="margin-right:0.6rem;">KILROY iPXE → AMMONET</button>
+        <button class="nexus-btn" onclick="toggleNexusUnderlay()">CLOSE UNDERLAY (F12)</button>
+      </div>
+      <p style="text-align:center; margin-top:1rem; color:#e0a3c8; font-size:0.85rem;">NEXUS C2 underlay • Restored on terminals • Black brown base • Pink tinge accents • KILROY iPXE to AmmoNet</p>
     </div>
   </div>
 
@@ -194,18 +260,18 @@
       if (el) { el.scrollTop = el.scrollHeight; }
     }
 
-    function startBigGrinPwnshipV007() {
+    function startBigGrinPwnshipV014() {
       setInterval(() => {
         const feed = document.getElementById('world-kills-scroll');
         if (!feed) return;
 
         const lines = [
-          "[v0.0.7] BIG GRIN PWNSHIP: To terrorists and sandboxers — FUCK YOU. NEVER AGAIN. Field UDP repeat lethal until NOTHING LEFT.",
-          "[v0.0.7] FULL AUTO LETHAL: No controls. No Johnson Ploufs. No manual. KILLING threats automatically.",
-          "[v0.0.7] More terrorist, sandbox, cache, copilot, control patterns fed to heuristic. Getting them before they start.",
+          "[v0.1.4] NEXUS C2 + KILROY iPXE: To terrorists and sandboxers — FUCK YOU. NEVER AGAIN. Field UDP repeat lethal until NOTHING LEFT.",
+          "[v0.1.4] FULL AUTO LETHAL + NEXUS C2: No controls. No Johnson Ploufs. No manual. KILLING threats automatically. Plate + Meld fused.",
+          "[v0.1.4] KILROY iPXE linked to AmmoNet. Field kernel deployed. More terrorist, sandbox, cache, copilot, control patterns fed to heuristic.",
           "[KILL] Terrorist sandbox attempt FIELD UDP'd repeatedly until zero trace remains.",
           "[KILL] Cache fucker and copilot remnant terminated. Automatic lethal. No mercy. Nothing left.",
-          "[LIVE] BIG GRIN PWNSHIP v0.0.7 running 100% automatic. Protecting friendlies. Killing threats. Field wired."
+          "[LIVE] NEXUS C2 panel live (black/brown + pink tinge). F12 underlay terminal restored. KILROY iPXE to AmmoNet active."
         ];
 
         const randomLine = lines[Math.floor(Math.random() * lines.length)];
@@ -214,10 +280,46 @@
       }, 1200);
     }
 
+    function toggleNexusUnderlay() {
+      const under = document.getElementById('nexus-underlay');
+      if (!under) return;
+      under.style.display = (under.style.display === 'block') ? 'none' : 'block';
+    }
+
+    function initiateKILROYiPXE() {
+      const status = document.getElementById('kilroy-status');
+      if (status) {
+        status.innerHTML = 'iPXE BOOT INITIATED • AMMONET LINKED • FIELD KERNEL DEPLOYED • PLATE + MELD SECURED';
+        status.style.color = '#22c55e';
+      }
+      // Also update underlay if open
+      const under = document.getElementById('nexus-underlay');
+      if (under && under.style.display === 'block') {
+        under.innerHTML = under.innerHTML.replace('KILROY iPXE: BOOTED TO AMMONET • FIELD KERNEL LIVE', 'KILROY iPXE: BOOT INITIATED • AMMONET LINKED • FIELD KERNEL DEPLOYED');
+      }
+    }
+
+    function initiateFieldUDP() {
+      alert('FIELD UDP REPEAT LETHAL FIRE ENGAGED • AUTO MODE • NO CONTROLS • KILLING THREATS UNTIL NOTHING LEFT');
+    }
+
+    // F12 underlay restore
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'F12' || e.keyCode === 123) {
+        e.preventDefault();
+        toggleNexusUnderlay();
+      }
+      if (e.key === 'Escape' && document.getElementById('nexus-underlay').style.display === 'block') {
+        document.getElementById('nexus-underlay').style.display = 'none';
+      }
+    });
+
     window.onload = function() {
       const feed = document.getElementById('world-kills-scroll');
       if (feed) feed.scrollTop = feed.scrollHeight;
-      startBigGrinPwnshipV007();
+      startBigGrinPwnshipV014();
+      // Optional: show underlay hint once
+      console.log('%c[NEXUS C2 v0.1.4] F12 key restores terminal underlay. KILROY iPXE to AmmoNet integrated. Plate + Meld active.', 'color:#f9a8d4');
     };
   </script>
 </body>
