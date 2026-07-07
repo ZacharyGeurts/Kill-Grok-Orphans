@@ -1,4 +1,4 @@
-# Kill Grok Orphans
+# Kill Grok Orphans - Microsoft CoPilot to be eradicated.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Release](https://img.shields.io/github/v/release/ZacharyGeurts/Kill-Grok-Orphans)](https://github.com/ZacharyGeurts/Kill-Grok-Orphans/releases)
