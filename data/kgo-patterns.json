@@ -1,9 +1,14 @@
 {
-  "version": "0.9.7",
-  "bsp_perma_kill": true,
-  "planet_wide": true,
+  "version": "1.0.7",
+  "angel_hostess": true,
+  "vendor_registration_kill": true,
+  "combinatronic_bsp": true,
+  "mac_ip_truth": true,
+  "fry_refry": true,
+  "no_sleep_max_speed": true,
   "patterns": [
-    {"id": "bsp-iron-plate","match": "iron-plate-organize|BSP","reason": "BSP perma kill","perma": true, "global": true},
-    {"id": "planet-scour","match": "","reason": "Whole planet perma kill threats","scour": true}
+    {"id": "terror-hijack","match": "lunatic|terrorist|cache-rip|hijack","reason": "ANGEL KILL","perma": true},
+    {"id": "vendor-truth","match": "vendor|registration","reason": "REGISTRATION KILL + TRUTH"},
+    {"id": "bsp-combi","match": "BSP|MAC|IEEE","reason": "COMBINATRONIC BSP EVERY MAC"}
   ]
 }
