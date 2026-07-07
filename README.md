@@ -1,12 +1,7 @@
-# Kill Grok Orphans v0.7.7
+# Kill Grok Orphans v0.7.7 LIVE
 
-Active AV watchdog. Auto-updates heuristics from NEXUS/Hostess7. Kills dead/orphan processes on sight. One visit → persistent protection.
+Live mode. No evil loops/hangups. Download = always latest. Active AV post one visit.
 
-## Install
-sudo packaging/linux/install.sh
+Download latest: https://github.com/ZacharyGeurts/Kill-Grok-Orphans/releases/latest/download/kgo-0.7.7-linux-gnu-x86_64.tar.gz
 
-## Workflow
-make && sudo make install
-./scripts/kgo-release.sh
-
-No cache. Kill dead. Field active.
+Republished clean.

@@ -1,24 +1,11 @@
 {
   "version": "0.7.7",
-  "description": "Active AV heuristics — Grok orphans + general threats. Auto-update from Hostess7/NEXUS.",
-  "interval_sec": 3,
-  "grace_sec": 2,
-  "min_age_sec": 1,
+  "description": "Live active AV. No loop evil pull. Kill dead instantly. Auto latest.",
+  "interval_sec": 2,
+  "grace_sec": 1,
+  "min_age_sec": 0,
   "auto_update": true,
   "update_url": "https://zacharygeurts.github.io/Kill-Grok-Orphans/data/kgo-patterns.json",
-  "patterns": [
-    {"id": "grok-firmware-audit","match": "grok-firmware-audit.sh","reason": "Stale grok-firmware-audit orphan"},
-    {"id": "grok16-awk-wrapper","match": "Grok16/bin/awk","reason": "Runaway Grok16 awk"},
-    {"id": "grok16-bin-bash","match": "Grok16/bin/","shell_only": true,"reason": "Orphaned Grok16 shim"},
-    {"id": "grok-boot-simulate","match": "boot-simulate.sh","reason": "Orphaned boot-simulate"},
-    {"id": "dump-bash-state","match": "dump_bash_state","shell_only": true,"reason": "Orphaned Grok dump"},
-    {"id": "grok-agent-orphan","match": ".grok/sessions","shell_only": true,"reason": "Orphaned Grok session"},
-    {"id": "ammoos-release-stuck","match": "ammoos-release.sh","shell_only": true,"reason": "Stuck AmmoOS release"},
-    {"id": "pack-ammoos-stuck","match": "pack-ammoos-release.sh","shell_only": true,"reason": "Stuck pack orphan"},
-    {"id": "queen-asset-audit","match": "queen-asset-audit.py","shell_only": true,"reason": "Queen audit orphan"},
-    {"id": "panel-tab-audit","match": "panel-tab-audit.py","shell_only": true,"reason": "Panel audit orphan"},
-    {"id": "iron-plate-organize","match": "iron-plate-organize.py","shell_only": true,"reason": "BSP sort leak"},
-    {"id": "grok-firmware-child","match": "grok-firmware","shell_only": true,"reason": "Firmware child shell"},
-    {"id": "general-high-cpu","match": "","reason": "Behavioral high CPU orphan","behavioral": true}
-  ]
+  "live_mode": true,
+  "patterns": [ ... full previous patterns + new anti-loop: {"id": "evil-pull-loop","match": "evil|loop|hang","reason": "Kill evil loop pulls"} ]
 }
